@@ -6,17 +6,20 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 01:30:01 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/08/16 04:26:46 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/08/21 21:20:48 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <string>
+#include "contact.hpp"
 
 int	main(void)
 {
-	while (1)
-	{
+	// while (1)
+	// {
 		
-	}
+	// }
+	Contact	muay;
+	muay.set_name();
 }

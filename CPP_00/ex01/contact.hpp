@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 01:03:21 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/08/19 01:18:26 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/08/21 21:26:54 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,17 +26,28 @@
 # define BCYN "\e[1;36m"
 # define BWHT "\e[1;37m"
 
-class contact
+class Contact
 {
 private:
 	std::string	_firstname;
 	std::string	_lastname;
-	std::string	_nicktname;
+	std::string	_nickname;
 	std::string	_phonenum;
 	std::string	_darksecret;
 public:
-	contact(/* args */);
-	~contact();
+	Contact();
+	~Contact();
+	std::string get_name();
+	std::string get_lastname();
+	std::string get_nickname();
+	std::string get_phone();
+	std::string get_secret();
+	void set_name(std::string name);
+	void set_lastname(std::string lastname);
+	void set_nickname(std::string nickname);
+	void set_phone(std::string phone);
+	void set_secret(std::string name);
+	
 };
 
 
