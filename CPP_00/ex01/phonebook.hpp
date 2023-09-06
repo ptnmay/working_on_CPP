@@ -6,26 +6,24 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 01:04:12 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/08/19 01:39:07 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/09/07 03:02:15 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PHONEBOOK_HPP
 # define PHONEBOOK_HPP
 
-# include "contact.hpp"
-# include <iostream>
+# include "Contact.hpp"
 
-class	phonebook;
+class	PhoneBook
 {
 	private:
-		contact	info[8];
+		Contact	info[8];
 	public:
-		phonebook(void);
-		~phonebook(void);
+		PhoneBook(void);
+		~PhoneBook(void);
 		void	ADD(void);
-		void	SEARCH(void);
-		void	Print_info(void);
+		// void	SEARCH(void);
 };
 
 #endif

@@ -6,7 +6,7 @@
 #    By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/03 07:19:00 by psaeyang          #+#    #+#              #
-#    Updated: 2023/08/03 07:19:14 by psaeyang         ###   ########.fr        #
+#    Updated: 2023/09/07 04:43:50 by psaeyang         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,12 +19,12 @@ COMPILE = echo "$(BCYN)$(NAME) compiled....$(RES)"
 CLEAN = echo "$(BYEL)$(NAME) clean....$(RES)"
 FCLEAN = echo "$(BRED)$(NAME) fclean....$(RES)"
 
-NAME = megaphone
+NAME = phonebook
 
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = megaphone.cpp
+SRC = PhoneBook.cpp Contact.cpp main.cpp
 OBJ = ${SRC:.cpp=.o}
 
 all: $(NAME)
@@ -53,3 +53,36 @@ song:
 re: fclean all
 
 .PHONY: all clean fclean re
+
+# ### Executablem###
+# NAME	= phonebook
+
+# ### Compilation ###
+# CC		= c++
+# RM		= rm -f
+# CFLAGS	= -Wall -Wextra -Werror -std=c++98
+
+# ### Source Files ###
+# SRCS	= main.cpp PhoneBook.cpp Contact.cpp
+
+# ### Object Files ###
+# OBJS	= $(SRCS:.cpp=.o)
+
+# ### Compilation Rule ###
+# %.o:%.cpp
+# 	$(CC) $(CFLAGS) -c $< -o $@
+
+# all: $(NAME)
+
+# $(NAME): $(OBJS)
+# 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+
+# clean:
+# 	$(RM) $(OBJS)
+
+# fclean: clean
+# 	$(RM) $(NAME)
+
+# re : fclean all
+
+# .PHONY: all clean fclean re

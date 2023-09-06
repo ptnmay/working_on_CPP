@@ -6,20 +6,27 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 01:30:01 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/08/21 21:20:48 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/09/07 03:25:29 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <string>
-#include "contact.hpp"
+#include "PhoneBook.hpp"
 
 int	main(void)
 {
-	// while (1)
-	// {
-		
-	// }
-	Contact	muay;
-	muay.set_name();
+	std::string	cmd;
+	PhoneBook	ph;
+	
+	while (1 && !std::cin.eof())
+	{
+		std::cout << "phonebook ::";
+		getline(std::cin, cmd);
+		if (cmd.compare("EXIT") == 0)
+			break ;
+		else if (cmd.compare("ADD") == 0)
+			ph.ADD();
+		// else if (cmd == "SEARCH")
+		// 	ph.SEARCH();
+	}
+	return (0);
 }
