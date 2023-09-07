@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 01:30:01 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/09/07 23:11:53 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/09/08 03:52:57 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	main(void)
 	
 	while (1 && !std::cin.eof())
 	{
-		std::cout << BGRN"phonebook :: ";
+		std::cout << BGRN"Phonebook :: ";
 		getline(std::cin, cmd);
 		if (cmd.compare("EXIT") == 0)
 			break ;
@@ -27,6 +27,8 @@ int	main(void)
 			ph.ADD();
 		else if (cmd.compare("SEARCH") == 0)
 			ph.SEARCH();
+		else
+			std::cout << BRED"INVALID COMMAND\n";
 	}
 	return (0);
 }
