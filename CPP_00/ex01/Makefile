@@ -6,7 +6,7 @@
 #    By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/03 07:19:00 by psaeyang          #+#    #+#              #
-#    Updated: 2023/09/07 04:43:50 by psaeyang         ###   ########.fr        #
+#    Updated: 2023/09/07 22:56:44 by psaeyang         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,17 +32,17 @@ all: $(NAME)
 $(NAME) : $(OBJ)
 		$(CC) $(FLAGS) $(OBJ) -o $(NAME)
 		@$(COMPILE)
-		@say -v Kanya "คอมพายแป๊ปนะค่ะ"
+		@say -v Kanya "คอมพายลิ่ง"
 
 clean:
 	rm -f ${OBJ}
 	@$(CLEAN)
-	@say -v Samantha "clean clean clean"
+	@say -v Samantha "clean"
 
 fclean: clean
 	rm -f ${NAME}
 	@$(FCLEAN)
-	@say -v Samantha "f clean bye"
+	@say -v Samantha "f clean"
 	
 song: 
 	@say -v Samantha "i'm a barbie girl"

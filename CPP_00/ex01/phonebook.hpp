@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 01:04:12 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/09/07 03:02:15 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/09/07 23:02:28 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class	PhoneBook
 		PhoneBook(void);
 		~PhoneBook(void);
 		void	ADD(void);
-		// void	SEARCH(void);
+		void	SEARCH(void);
 };
 
 #endif

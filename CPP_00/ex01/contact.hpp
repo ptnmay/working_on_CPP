@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 01:03:21 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/08/23 20:57:05 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/09/07 23:08:44 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@
 # define BMAG "\e[1;35m"
 # define BCYN "\e[1;36m"
 # define BWHT "\e[1;37m"
+# define RESET "\e[0m"
 
 class Contact
 {
