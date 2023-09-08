@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 21:47:36 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/09/08 03:51:39 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/09/09 00:09:19 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,49 @@ void	PhoneBook::ADD(void)
 {
 	int i = 0;
 	std::string contact[5];
+	std::string type = "alpha";
 	
 	while (i < 5)
 	{
 		std::cout << BMAG << this->type_info[i] << RESET << std::endl;
 		getline(std::cin, contact[i]);
 		i++;
+	}
+	for (int count = 0; count < 5; count++)
+	{
+		if (count == 3)
+			type = "num";
+		else
+			type = "alpha";
+		check(contact[count], type);
+	}
+}
+
+void	PhoneBook::check(std::string cont, std::string type)
+{
+	int	len = cont.length();
+	if (type == "num")
+	{
+		for (int i = 0; i < len; i++)
+		{
+			if (!isdigit(cont[i]))
+			{
+				std::cout << cont[i];
+				std::cout << BRED"Phone number must be NUMBER\n";
+				exit(0);
+			}
+		}
+	}
+	else if (type == "alpha")
+	{
+		for (int j = 0; j < len; j++)
+		{
+			if (!isalpha(cont[j]))
+			{
+				std::cout << BRED"All info. must be alpabet\n";
+				exit(0);
+			}
+		}
 	}
 }
 
