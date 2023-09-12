@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 21:47:36 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/09/09 00:14:51 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/09/12 17:51:48 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,12 +44,12 @@ void	PhoneBook::ADD(void)
 			type = "num";
 		else
 			type = "alpha";
-		check(contact[count], type);
+		check(contact[count], type, count);
 	}
-	// save_contact(contact);
+	save_contact(contact, info);
 }
 
-void	PhoneBook::check(std::string cont, std::string type)
+void	PhoneBook::check(std::string cont, std::string type, int count)
 {
 	int	len = cont.length();
 	if (type == "num")
@@ -58,8 +58,7 @@ void	PhoneBook::check(std::string cont, std::string type)
 		{
 			if (!isdigit(cont[i]))
 			{
-				std::cout << cont[i];
-				std::cout << BRED"Phone number must be NUMBER\n";
+				std::cout << BRED"NUMBER only\n";
 				exit(0);
 			}
 		}
@@ -68,9 +67,11 @@ void	PhoneBook::check(std::string cont, std::string type)
 	{
 		for (int j = 0; j < len; j++)
 		{
-			if (!isalpha(cont[j]))
+			if (isspace(cont[j]) && count == 4)
+				j++;
+			if (!isalpha(cont[j]) && count != 4)
 			{
-				std::cout << BRED"All info. must be alpabet\n";
+				std::cout << BRED"name = alphabet\n";
 				exit(0);
 			}
 		}
