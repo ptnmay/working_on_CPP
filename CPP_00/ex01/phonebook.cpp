@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 21:47:36 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/09/13 00:33:15 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/09/13 02:59:48 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,15 +28,21 @@ PhoneBook::~PhoneBook(void)
 
 void	PhoneBook::ADD(void)
 {
-	int i = 0;
+	Contact ct;
 	std::string contact[5];
 	std::string type = "alpha";
+	// int i = 0;
 
-	while (i < 5)
+	// while (i < 5)
+	// {
+	// 	std::cout << BMAG << this->type_info[i] << RESET << std::endl;
+	// 	getline(std::cin, contact[i]);
+	// 	i++;
+	// }
+	for (int i = 0; i < 5; i++)
 	{
 		std::cout << BMAG << this->type_info[i] << RESET << std::endl;
 		getline(std::cin, contact[i]);
-		i++;
 	}
 	for (int count = 0; count < 5; count++)
 	{
@@ -46,7 +52,7 @@ void	PhoneBook::ADD(void)
 			type = "alpha";
 		check(contact[count], type, count);
 	}
-	save_contact(contact);
+	ct.save_contact(contact);
 }
 
 void	PhoneBook::check(std::string cont, std::string type, int count)
