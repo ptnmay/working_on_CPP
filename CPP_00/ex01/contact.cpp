@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.cpp                                        :+:      :+:    :+:   */
+/*   contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 21:07:52 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/09/07 03:22:43 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/09/13 00:49:10 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,13 @@ Contact::Contact()
 Contact::~Contact()
 {}
 
-std::string Contact::get_name()
+void	save_contact(std::string *contact)
 {
-	return (_firstname);
-}
-
-void	Contact::set_name(std::string name)
-{
-	_firstname = name;
+	this->_firstname = contact[0];
+	this->_lastname = contact[1];
+	this->_nickname = contact[2];
+	this->_phonenum = contact[3];
+	this->_darksecret = contact[4];
 }
 
 
