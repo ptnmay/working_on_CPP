@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 21:47:36 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/09/13 02:59:48 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/09/14 22:52:17 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,11 @@ void	PhoneBook::ADD(void)
 		check(contact[count], type, count);
 	}
 	ct.save_contact(contact);
+	std::cout << ct.get_firstname() << std::endl;
+	std::cout << ct.get_lastname() << std::endl;
+	std::cout << ct.get_nickname() << std::endl;
+	std::cout << ct.get_phone() << std::endl;
+	std::cout << ct.get_secret() << std::endl;
 }
 
 void	PhoneBook::check(std::string cont, std::string type, int count)

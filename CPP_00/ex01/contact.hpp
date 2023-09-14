@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 01:03:21 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/09/13 03:00:04 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/09/14 22:48:07 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,11 @@ class Contact
 	public:
 		Contact();
 		~Contact();
-		// std::string get_name();
-		// std::string get_lastname();
-		// std::string get_nickname();
-		// std::string get_phone();
-		// std::string get_secret();
+		std::string get_firstname();
+		std::string get_lastname();
+		std::string get_nickname();
+		std::string get_phone();
+		std::string get_secret();
 		// void set_name(std::string name);
 		// void set_lastname(std::string lastname);
 		// void set_nickname(std::string nickname);
