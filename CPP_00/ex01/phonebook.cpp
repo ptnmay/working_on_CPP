@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 21:47:36 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/09/15 01:32:14 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/09/15 02:02:55 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,11 @@ void	PhoneBook::ADD(void)
 void	PhoneBook::check(std::string cont, std::string type, int count)
 {
 	int	len = cont.length();
+	if (cont.empty())
+	{
+		std::cout << BRED"cannot be empty\n";
+		exit(0);
+	}
 	if (type == "num")
 	{
 		for (int i = 0; i < len; i++)
