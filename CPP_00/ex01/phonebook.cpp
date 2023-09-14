@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 21:47:36 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/09/14 22:52:17 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/09/15 01:32:14 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 PhoneBook::PhoneBook(void)
 {
+	this->num_contact = 0;
 	this->type_info[0] = "first name   :";
 	this->type_info[1] = "last name    :";
 	this->type_info[2] = "nickname     :";
@@ -31,14 +32,7 @@ void	PhoneBook::ADD(void)
 	Contact ct;
 	std::string contact[5];
 	std::string type = "alpha";
-	// int i = 0;
 
-	// while (i < 5)
-	// {
-	// 	std::cout << BMAG << this->type_info[i] << RESET << std::endl;
-	// 	getline(std::cin, contact[i]);
-	// 	i++;
-	// }
 	for (int i = 0; i < 5; i++)
 	{
 		std::cout << BMAG << this->type_info[i] << RESET << std::endl;
@@ -53,11 +47,21 @@ void	PhoneBook::ADD(void)
 		check(contact[count], type, count);
 	}
 	ct.save_contact(contact);
-	std::cout << ct.get_firstname() << std::endl;
-	std::cout << ct.get_lastname() << std::endl;
-	std::cout << ct.get_nickname() << std::endl;
-	std::cout << ct.get_phone() << std::endl;
-	std::cout << ct.get_secret() << std::endl;
+	if (this->num_contact < 8)
+	{
+		this->info[num_contact] = ct;
+		this->num_contact++;
+		if (this->num_contact == 8)
+			this->num_contact = 0;
+	}
+	std::cout << BYEL;
+	std::cout << info->get_firstname() << std::endl;
+	std::cout << info->get_lastname() << std::endl;
+	std::cout << info->get_nickname() << std::endl;
+	std::cout << info->get_phone() << std::endl;
+	std::cout << info->get_secret() << std::endl;
+	std::cout << num_contact << std::endl;
+	std::cout << "----------------------------" << std::endl;
 }
 
 void	PhoneBook::check(std::string cont, std::string type, int count)
