@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 21:47:36 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/09/15 02:02:55 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/09/16 23:14:26 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,14 +54,14 @@ void	PhoneBook::ADD(void)
 		if (this->num_contact == 8)
 			this->num_contact = 0;
 	}
-	std::cout << BYEL;
-	std::cout << info->get_firstname() << std::endl;
-	std::cout << info->get_lastname() << std::endl;
-	std::cout << info->get_nickname() << std::endl;
-	std::cout << info->get_phone() << std::endl;
-	std::cout << info->get_secret() << std::endl;
-	std::cout << num_contact << std::endl;
-	std::cout << "----------------------------" << std::endl;
+	// std::cout << BYEL;
+	// std::cout << info->get_firstname() << std::endl;
+	// std::cout << info->get_lastname() << std::endl;
+	// std::cout << info->get_nickname() << std::endl;
+	// std::cout << info->get_phone() << std::endl;
+	// std::cout << info->get_secret() << std::endl;
+	// std::cout << num_contact << std::endl;
+	// std::cout << "----------------------------" << std::endl;
 }
 
 void	PhoneBook::check(std::string cont, std::string type, int count)
@@ -70,7 +70,7 @@ void	PhoneBook::check(std::string cont, std::string type, int count)
 	if (cont.empty())
 	{
 		std::cout << BRED"cannot be empty\n";
-		exit(0);
+		return ;
 	}
 	if (type == "num")
 	{
@@ -79,7 +79,7 @@ void	PhoneBook::check(std::string cont, std::string type, int count)
 			if (!isdigit(cont[i]))
 			{
 				std::cout << BRED"NUMBER only\n";
-				exit(0);
+				return ;
 			}
 		}
 	}
@@ -92,7 +92,7 @@ void	PhoneBook::check(std::string cont, std::string type, int count)
 			if (!isalpha(cont[j]) && count != 4)
 			{
 				std::cout << BRED"name = alphabet\n";
-				exit(0);
+				return ;
 			}
 		}
 	}
@@ -100,11 +100,14 @@ void	PhoneBook::check(std::string cont, std::string type, int count)
 
 void	PhoneBook::SEARCH(void)
 {
-	int	i = 0;
+	display_contact();
+}
 
-	while (i < 5)
-	{
-		std::cout << BCYN"search\n";
-		i++;
-	}
+void	PhoneBook::display_contact(void)
+{
+	std::cout << BCYN"---------------------------------------------\n" << RESET;
+	std::cout << BMAG"|     Index| Firstname|  Lastname|  Nickname|" << RESET << std::endl;
+	std::cout << BCYN"---------------------------------------------\n" << RESET;
+	
+
 }
