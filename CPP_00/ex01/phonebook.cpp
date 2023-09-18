@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 21:47:36 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/09/16 23:14:26 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/09/19 02:53:39 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,6 +108,13 @@ void	PhoneBook::display_contact(void)
 	std::cout << BCYN"---------------------------------------------\n" << RESET;
 	std::cout << BMAG"|     Index| Firstname|  Lastname|  Nickname|" << RESET << std::endl;
 	std::cout << BCYN"---------------------------------------------\n" << RESET;
-	
+	for (int i = 0; i < this->num_contact; i++)
+	{
+		std::cout << BYEL << "|" << std::setw(10) << std::right << i << "|";
+		std::cout << std::setw(10) << std::right << info->get_firstname() << "|";
+		std::cout << std::setw(10) << std::right << info->get_lastname() << "|";
+		std::cout << std::setw(10) << std::right << info->get_nickname() << "|";
+		std::cout << std::endl;
+	}
 
 }

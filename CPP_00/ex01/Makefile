@@ -6,7 +6,7 @@
 #    By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/03 07:19:00 by psaeyang          #+#    #+#              #
-#    Updated: 2023/09/07 22:56:44 by psaeyang         ###   ########.fr        #
+#    Updated: 2023/09/19 02:22:49 by psaeyang         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ NAME = phonebook
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = PhoneBook.cpp Contact.cpp main.cpp
+SRC = phonebook.cpp contact.cpp main.cpp
 OBJ = ${SRC:.cpp=.o}
 
 all: $(NAME)
@@ -43,8 +43,8 @@ fclean: clean
 	rm -f ${NAME}
 	@$(FCLEAN)
 	@say -v Samantha "f clean"
-	
-song: 
+
+song:
 	@say -v Samantha "i'm a barbie girl"
 	@say -v Samantha "in a barbie world o oh"
 	@say -v Samantha "i am plastic"
