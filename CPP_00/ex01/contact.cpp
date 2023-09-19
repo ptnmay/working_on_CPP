@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 21:07:52 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/09/19 19:58:12 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/09/19 23:52:33 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,13 +51,12 @@ void	Contact::save_contact(std::string *contact)
 	this->_darksecret = contact[4];
 }
 
-// void	Contact::show_search(void)
+// void	Contact::show_search(int j)
 // {
-// 	std::string name = this->_firstname;
-// 	std::string lastname = this->_lastname;
-// 	std::string nickname = this->_nickname;
-// 	std::cout << std::setw(10) << std::right << info->get_firstname() << "|";
-// 	std::cout << std::setw(10) << std::right << info->get_lastname() << "|";
-// 	std::cout << std::setw(10) << std::right << info->get_nickname() << "|";
-// 	std::cout << std::endl;
+// 			std::cout << std::setw(9) << std::right << _firstname.substr(0, (9)) + "." << "|";
+// 			std::cout << std::setw(9) << std::right << _lastname.substr(0, (9)) + "." << "|";
+// 			std::cout << std::setw(9) << std::right << _nickname.substr(0, (9)) + "." << "|";
+// 		else
+			
+// 		std::cout << std::endl;
 // }
