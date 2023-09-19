@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 21:47:36 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/09/20 00:39:30 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/09/20 00:48:51 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,7 @@ void	PhoneBook::SEARCH(void)
 	std::cout << BBLU"index >> ";
 	int	input;
 	std::cin >> input;
-	if (input > 8 || input < 0 || input >= num_contact)
+	if (std::cin.fail() || input > 8 || input < 0 || input >= num_contact)
 	{
 		std::cin.clear();
 		std::cin.ignore(10000, '\n');
