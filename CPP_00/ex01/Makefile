@@ -6,7 +6,7 @@
 #    By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/03 07:19:00 by psaeyang          #+#    #+#              #
-#    Updated: 2023/09/19 02:22:49 by psaeyang         ###   ########.fr        #
+#    Updated: 2023/09/20 00:34:43 by psaeyang         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ NAME = phonebook
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = phonebook.cpp contact.cpp main.cpp
+SRC = PhoneBook.cpp Contact.cpp main.cpp
 OBJ = ${SRC:.cpp=.o}
 
 all: $(NAME)
