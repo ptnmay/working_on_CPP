@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 21:47:36 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/09/20 00:34:04 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/09/20 00:39:30 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	PhoneBook::ADD(void)
 
 	for (int i = 0; i < 5; i++)
 	{
-		std::cout << BMAG << this->type_info[i] << RESET;
+		std::cout << BMAG << this->type_info[i];
 		getline(std::cin, contact[i]);
 	}
 	for (int count = 0; count < 5; count++)
@@ -96,7 +96,7 @@ void	PhoneBook::SEARCH(void)
 {
 	display_contact();
 	std::cout << BMAG"choose index that you wanna see\n";
-	std::cout << BBLU"SEARCH >> ";
+	std::cout << BBLU"index >> ";
 	int	input;
 	std::cin >> input;
 	if (input > 8 || input < 0 || input >= num_contact)
