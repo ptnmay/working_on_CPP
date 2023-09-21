@@ -6,7 +6,7 @@
 #    By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/21 00:30:12 by psaeyang          #+#    #+#              #
-#    Updated: 2023/09/21 00:30:33 by psaeyang         ###   ########.fr        #
+#    Updated: 2023/09/22 00:04:41 by psaeyang         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,12 +43,6 @@ fclean: clean
 	rm -f ${NAME}
 	@$(FCLEAN)
 	@say -v Samantha "f clean"
-
-song:
-	@say -v Samantha "i'm a barbie girl"
-	@say -v Samantha "in a barbie world o oh"
-	@say -v Samantha "i am plastic"
-	@say -v Samantha "it's fantastic"
 
 re: fclean all
 

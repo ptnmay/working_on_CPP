@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 00:49:26 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/09/21 00:55:36 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/09/22 00:06:38 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@ int	main()
 {
 	Zombie *somezom;
 
-	std::cout << BCYN;
+	std::cout << BMAG;
 	somezom = newZombie("Mai");
 	somezom->announce();
-	
-	std::cout << BMAG;
+	std::cout << BGRN"--------------------------------\n" << RESET;
+	std::cout << BCYN;
 	randomChump("Me");
 	std::cout << RESET;
 }
