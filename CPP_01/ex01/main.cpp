@@ -1,23 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/25 23:17:49 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/09/26 02:33:55 by psaeyang         ###   ########.fr       */
+/*   Created: 2023/09/26 01:39:26 by psaeyang          #+#    #+#             */
+/*   Updated: 2023/09/26 01:39:51 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie* Zombie::zombieHorde(int N, std::string name)
+int main()
 {
-	Zombie* ZomH = new Zombie[N];
-	for (int i = 0; i < N; i++)
-	{
-		ZomH[i].name = name;
-	}
-	return ZomH;
+	Zombie zom;
 }
