@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 23:33:03 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/09/26 03:03:02 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/09/26 03:20:31 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,6 @@ class Zombie
 	private:
 		std::string name;
 	public:
-		// Zombie(std::string name);
-		// ~Zombie();
 		void	announce(void);
-
+		static Zombie* zombieHorde(int N, std::string name);
 };
-Zombie* zombieHorde(int N, std::string name);

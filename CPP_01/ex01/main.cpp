@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 01:39:26 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/09/26 03:00:45 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/09/26 03:20:11 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,12 @@
 
 int main(void)
 {
-	Zombie *zoms = zombieHorde(5, "Mavis");
-	for (int i = 0; i < 5; i++)
+	int N = 5;
+	std::string name = "mavis";
+	Zombie *zoms = Zombie::zombieHorde(N, name);
+	for (int i = 0; i < N; i++)
 	{
-		std::cout << "Zom[" << i + 1 << "]: ";
+		std::cout << BMAG"Zom[" << i + 1 << "]: ";
 		zoms[i].announce();
 	}
 	delete[] zoms;
