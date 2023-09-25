@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 00:26:01 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/09/22 00:07:17 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/09/26 02:35:13 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,7 @@ Zombie::Zombie(std::string name)
 }
 
 Zombie::~Zombie()
-{
-	
-}
+{}
 
 void	Zombie::announce()
 {
