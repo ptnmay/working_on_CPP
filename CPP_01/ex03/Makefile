@@ -6,7 +6,7 @@
 #    By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/26 03:28:13 by psaeyang          #+#    #+#              #
-#    Updated: 2023/09/26 03:28:21 by psaeyang         ###   ########.fr        #
+#    Updated: 2023/10/02 04:23:24 by psaeyang         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ NAME = zombie
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC =  main.cpp
+SRC =  main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
 OBJ = ${SRC:.cpp=.o}
 
 all: $(NAME)

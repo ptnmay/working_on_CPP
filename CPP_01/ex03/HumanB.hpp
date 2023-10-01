@@ -6,12 +6,12 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 00:20:05 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/10/02 00:25:14 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/10/02 04:27:48 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMANA_HPP
-# define HUMANA_HPP
+#ifndef HUMANB_HPP
+# define HUMANB_HPP
 
 # include "Weapon.hpp"
 
@@ -23,7 +23,8 @@ class HumanB
 	public:
 		HumanB(std::string name);
 		~HumanB(void);
-		void	attact(void);
+		void	setWeapon(Weapon& weapon);
+		void	attack(void);
 };
 
 #endif

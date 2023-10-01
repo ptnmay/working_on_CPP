@@ -6,9 +6,12 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 03:29:41 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/09/26 03:30:45 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/10/02 04:24:22 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "HumanA.hpp"
+#include "HumanB.hpp"
 
 int main()
 {
