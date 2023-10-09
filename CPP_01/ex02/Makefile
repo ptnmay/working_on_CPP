@@ -6,7 +6,7 @@
 #    By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/26 03:26:19 by psaeyang          #+#    #+#              #
-#    Updated: 2023/09/26 03:26:36 by psaeyang         ###   ########.fr        #
+#    Updated: 2023/10/09 23:40:55 by psaeyang         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ COMPILE = echo "$(BCYN)$(NAME) compiled....$(RES)"
 CLEAN = echo "$(BYEL)$(NAME) clean....$(RES)"
 FCLEAN = echo "$(BRED)$(NAME) fclean....$(RES)"
 
-NAME = zombie
+NAME = this_is_brain
 
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
