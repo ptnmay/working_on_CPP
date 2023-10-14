@@ -6,7 +6,7 @@
 #    By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/13 15:52:12 by psaeyang          #+#    #+#              #
-#    Updated: 2023/10/13 15:53:35 by psaeyang         ###   ########.fr        #
+#    Updated: 2023/10/15 01:18:48 by psaeyang         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,7 @@ NAME = Harl_filter
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = main.cpp
+SRC = main.cpp Harl.cpp
 OBJ = ${SRC:.cpp=.o}
 
 all: $(NAME)
