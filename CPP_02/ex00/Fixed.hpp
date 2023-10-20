@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 23:15:28 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/10/19 23:18:28 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/10/20 23:21:12 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,16 @@
 
 class Fixed
 {
-	
+	private:
+		int	fixp;
+		static const int bits = 8;
+	public:
+		Fixed();
+		Fixed(Fixed const &Fixcpy);
+		Fixed &		operator = (Fixed const &Fixcp);
+		~Fixed();
+		int		getRawBits(void) const;
+		void	setRawBits(int const raw);
 };
 
 #endif
