@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 23:15:24 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/10/20 23:38:24 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/10/23 00:11:40 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ Fixed &		Fixed::operator = (Fixed const &Fixcp)
 
 void	Fixed::setRawBits(int const raw)
 {
-	fixp = raw << bits;
+	fixp = raw;
 }
 
 int		Fixed::getRawBits(void) const
