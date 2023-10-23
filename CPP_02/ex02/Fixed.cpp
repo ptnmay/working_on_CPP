@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 02:44:14 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/10/23 02:44:16 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/10/23 15:42:00 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,3 +77,48 @@ std::ostream&	operator<<(std::ostream& print, Fixed const& show)
 	print << show.toFloat();
 	return print;
 }
+
+bool	Fixed::operator>(Fixed const& cmp) const
+{
+	if (cmp.fixp > fixp)
+		return true;
+	else
+		return false;
+}
+bool	Fixed::operator>=(Fixed const& cmp) const
+{
+	if (cmp.fixp >= fixp)
+		return true;
+	else
+		return false;
+}
+bool	Fixed::operator<(Fixed const& cmp) const
+{
+	if (cmp.fixp < fixp)
+		return true;
+	else
+		return false;
+}
+bool	Fixed::operator<=(Fixed const& cmp) const
+{
+	if (cmp.fixp <= fixp)
+		return true;
+	else
+		return false;
+}
+bool	Fixed::operator==(Fixed const& cmp) const
+{
+	if (cmp.fixp == fixp)
+		return true;
+	else
+		return false;
+}
+bool	Fixed::operator!=(Fixed const& cmp) const
+{
+	if (cmp.fixp != fixp)
+		return true;
+	else
+		return false;
+}
+
+

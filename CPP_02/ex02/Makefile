@@ -6,7 +6,7 @@
 #    By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/23 02:43:26 by psaeyang          #+#    #+#              #
-#    Updated: 2023/10/23 02:43:29 by psaeyang         ###   ########.fr        #
+#    Updated: 2023/10/23 14:50:04 by psaeyang         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,7 +43,7 @@ clean:
 fclean: clean
 	rm -f ${NAME}
 	@$(FCLEAN)
-	@say -v Samantha "f clean"
+#	@say -v Samantha "f clean"
 
 re: fclean all
 
