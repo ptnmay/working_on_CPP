@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 02:44:05 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/10/23 15:35:48 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/10/23 22:34:56 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,12 +45,33 @@ class Fixed
 		float toFloat( void ) const;
 		int toInt( void ) const;
 
+//		compare
 		bool	operator>(Fixed const& cmp) const;
 		bool	operator>=(Fixed const& cmp) const;
 		bool	operator<(Fixed const& cmp) const;
 		bool	operator<=(Fixed const& cmp) const;
 		bool	operator==(Fixed const& cmp) const;
 		bool	operator!=(Fixed const& cmp) const;
+
+//		arithment
+		Fixed 		operator + (Fixed const &Fixcp) const;
+		Fixed 		operator - (Fixed const &Fixcp) const;
+		Fixed 		operator * (Fixed const &Fixcp) const;
+		Fixed 		operator / (Fixed const &Fixcp) const;
+
+//		incre / decre
+		Fixed	&operator++(void);
+		Fixed	 operator++(int);
+		Fixed	&operator--(void);
+		Fixed	 operator--(int);
+		
+//		min max
+		static Fixed&		min(Fixed &a, Fixed &b);
+		static Fixed const &min(Fixed const &a, Fixed const &b);
+		static Fixed&		max(Fixed &a, Fixed &b);
+		static Fixed const&	max(Fixed const &a, Fixed const &b);
+
+
 };
 
 std::ostream&	operator<<(std::ostream& print, Fixed const& show);

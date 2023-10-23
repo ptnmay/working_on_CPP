@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 02:44:14 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/10/23 15:42:00 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/10/23 22:50:09 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,39 +15,30 @@
 Fixed::Fixed()
 {
 	this->fixp = 0;
-	std::cout << BGRN"Default constructor called\n" << RESET;
 }
 
 Fixed::Fixed(const int num)
 {
 	this->fixp = num << bits;
-	std::cout << BGRN"Int constructor called\n" << RESET;
 }
 
 Fixed::Fixed(const float num)
 {
 	this->fixp = roundf(num * 256);
-	std::cout << BGRN"Float constructor called\n" << RESET;
 }
 
 Fixed::~Fixed()
-{
-	std::cout << BRED"Destructor called\n" << RESET;
-}
+{}
 
 Fixed::Fixed(Fixed const &Fixcpy)
 {
-	std::cout << BMAG"Copy constructor called\n" << RESET;
 	this->fixp = Fixcpy.fixp;
 }
 
 Fixed &		Fixed::operator = (Fixed const &Fixcp)
 {
 	if (this != &Fixcp)
-	{
 		this->fixp = Fixcp.fixp;
-		std::cout << BCYN"Copy assignment operator called\n" << RESET;
-	}
 	return *this;
 }
 
@@ -58,7 +49,6 @@ void	Fixed::setRawBits(int const raw)
 
 int		Fixed::getRawBits(void) const
 {
-	std::cout << BYEL"getRawBits member function called\n" << RESET;
 	return this->fixp;
 }
 
@@ -72,6 +62,8 @@ int	Fixed::toInt(void) const
 	return (this->fixp >> bits);
 }
 
+//compare
+
 std::ostream&	operator<<(std::ostream& print, Fixed const& show)
 {
 	print << show.toFloat();
@@ -80,45 +72,121 @@ std::ostream&	operator<<(std::ostream& print, Fixed const& show)
 
 bool	Fixed::operator>(Fixed const& cmp) const
 {
-	if (cmp.fixp > fixp)
+	if (fixp > cmp.fixp)
 		return true;
 	else
 		return false;
 }
 bool	Fixed::operator>=(Fixed const& cmp) const
 {
-	if (cmp.fixp >= fixp)
+	if (fixp >= cmp.fixp)
 		return true;
 	else
 		return false;
 }
 bool	Fixed::operator<(Fixed const& cmp) const
 {
-	if (cmp.fixp < fixp)
+	if (fixp < cmp.fixp)
 		return true;
 	else
 		return false;
 }
 bool	Fixed::operator<=(Fixed const& cmp) const
 {
-	if (cmp.fixp <= fixp)
+	if (fixp <= cmp.fixp)
 		return true;
 	else
 		return false;
 }
 bool	Fixed::operator==(Fixed const& cmp) const
 {
-	if (cmp.fixp == fixp)
+	if (fixp == cmp.fixp)
 		return true;
 	else
 		return false;
 }
 bool	Fixed::operator!=(Fixed const& cmp) const
 {
-	if (cmp.fixp != fixp)
+	if (fixp != cmp.fixp)
 		return true;
 	else
 		return false;
 }
 
+//arithmetic
 
+Fixed 		Fixed::operator + (Fixed const &Fixcp) const
+{
+	return Fixed(this->toFloat() + Fixcp.toFloat());
+}
+Fixed 		Fixed::operator - (Fixed const &Fixcp) const
+{
+	return Fixed(this->toFloat() - Fixcp.toFloat());
+}
+Fixed 		Fixed::operator * (Fixed const &Fixcp) const
+{
+	return Fixed(this->toFloat() * Fixcp.toFloat());
+}
+Fixed 		Fixed::operator / (Fixed const &Fixcp) const
+{
+	return Fixed(this->toFloat() / Fixcp.toFloat());
+}
+
+//increment decrement
+
+Fixed	& Fixed::operator++(void)
+{
+	++this->fixp;
+	return *this;
+}
+Fixed	Fixed::operator++(int)
+{
+	Fixed tmp(*this);
+	++this->fixp;
+	return tmp;
+}
+Fixed	& Fixed::operator--(void)
+{
+	--this->fixp;
+	return *this;
+}
+Fixed	Fixed::operator--(int)
+{
+	Fixed tmp(*this);
+	--this->fixp;
+	return tmp;
+}
+
+// Fixed 		Fixed::operator + (Fixed const &Fixcp) const
+// {
+// 	Fixed result;
+// 	result.setRawBits(this->fixp + Fixcp.getRawBits());
+	
+// 	return result;
+// }
+
+//min max
+Fixed&	Fixed::min(Fixed &a, Fixed &b)
+{
+	if (a <= b)
+		return a;
+	return b;
+}
+Fixed const& Fixed::min(Fixed const &a, Fixed const &b)
+{
+	if (a <= b)
+		return a;
+	return b;
+}
+Fixed&	Fixed::max(Fixed &a, Fixed &b)
+{
+	if (a <= b)
+		return b;
+	return a;
+}
+Fixed const& Fixed::max(Fixed const &a, Fixed const &b)
+{
+	if (a <= b)
+		return b;
+	return a;
+}
