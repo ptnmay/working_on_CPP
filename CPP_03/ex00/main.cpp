@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 00:02:53 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/10/26 00:53:37 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/10/26 02:13:49 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,5 @@ int main()
 	
 	a.attack("b");
 	b.takeDamage(2);
-	a.beRepaired(10);
+	b.beRepaired(10);
 }

@@ -6,11 +6,32 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 23:47:10 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/10/26 00:53:18 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/10/26 02:25:05 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+
+ClapTrap::ClapTrap(ClapTrap const &CTcpy)
+{
+	this->_name = CTcpy._name;
+	this->_hitpoint = CTcpy._hitpoint;
+	this->_attack = CTcpy._hitpoint;
+	this->_energy = CTcpy._energy;
+	std::cout << BCYN"ClapTrap Copy Constructor Called" << RESET << std::endl;
+}
+
+ClapTrap &	ClapTrap::operator = (ClapTrap const &CTcpy)
+{
+	if (this != &CTcpy)
+	{
+		this->_name = CTcpy._name;
+		this->_hitpoint = CTcpy._hitpoint;
+		this->_attack = CTcpy._hitpoint;
+		this->_energy = CTcpy._energy;
+	}
+	return *this;
+}
 
 ClapTrap::ClapTrap()
 {
@@ -39,6 +60,7 @@ void ClapTrap::attack(const std::string& target)
 		this->_energy -= 1;
 		std::cout << "ClapTrap " << this->_name << " attack " << target;
 		std::cout << ", causing " << this->_attack << " point of damage!" << std::endl;
+		std::cout << "hit point = " << this->_hitpoint << std::endl;
 	}
 	else
 		std::cout << "ClapTrap " << this->_name << " not enough energy\n";
@@ -64,6 +86,7 @@ void ClapTrap::beRepaired(unsigned int amount)
 		this->_hitpoint += amount;
 		std::cout << "ClapTrap " << this->_name << " got repair ";
 		std::cout << ", causing " << amount << " point of repair!" << std::endl;
+		std::cout << "hit point = " << this->_hitpoint << std::endl;
 	}
 	else
 	{
