@@ -6,7 +6,7 @@
 #    By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/20 00:02:01 by psaeyang          #+#    #+#              #
-#    Updated: 2023/10/20 00:02:45 by psaeyang         ###   ########.fr        #
+#    Updated: 2023/10/25 00:11:12 by psaeyang         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,17 +32,17 @@ all: $(NAME)
 $(NAME) : $(OBJ)
 		$(CC) $(FLAGS) $(OBJ) -o $(NAME)
 		@$(COMPILE)
-		@say -v Kanya "คอมพายลิ่ง"
+#		@say -v Kanya "คอมพายลิ่ง"
 
 clean:
 	rm -f ${OBJ}
 	@$(CLEAN)
-	@say -v Samantha "clean"
+#	@say -v Samantha "clean"
 
 fclean: clean
 	rm -f ${NAME}
 	@$(FCLEAN)
-	@say -v Samantha "f clean"
+#	@say -v Samantha "f clean"
 
 re: fclean all
 
