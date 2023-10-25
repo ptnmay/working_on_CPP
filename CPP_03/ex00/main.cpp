@@ -6,8 +6,18 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 00:02:53 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/10/25 22:15:45 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/10/26 00:53:37 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+
+int main()
+{
+	ClapTrap	a("a");
+	ClapTrap	b("b");
+	
+	a.attack("b");
+	b.takeDamage(2);
+	a.beRepaired(10);
+}
