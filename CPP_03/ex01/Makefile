@@ -6,7 +6,7 @@
 #    By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/20 00:02:01 by psaeyang          #+#    #+#              #
-#    Updated: 2023/10/28 02:00:41 by psaeyang         ###   ########.fr        #
+#    Updated: 2023/10/28 03:22:27 by psaeyang         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ COMPILE = echo "$(BCYN)$(NAME) compiled....$(RES)"
 CLEAN = echo "$(BYEL)$(NAME) clean....$(RES)"
 FCLEAN = echo "$(BRED)$(NAME) fclean....$(RES)"
 
-NAME = ClapTrap
+NAME = ScavTrap
 
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98

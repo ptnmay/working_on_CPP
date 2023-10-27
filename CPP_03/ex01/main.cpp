@@ -6,18 +6,22 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 00:02:53 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/10/28 02:03:19 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/10/28 03:22:09 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
-int main()
+int	main(void)
 {
-	ClapTrap	a("a");
-	ClapTrap	b("b");
-	
-	a.attack("b");
-	b.takeDamage(2);
-	b.beRepaired(10);
+	ScavTrap	st("Robot");
+	ClapTrap	ct("Rudeus");
+
+	st.attack("Red Dragon");
+	ct.attack("Red Dragon");
+
+	st.takeDamage(20);
+	st.beRepaired(10);
+	st.guardGate();
+	return 0;
 }

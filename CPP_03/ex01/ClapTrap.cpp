@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 23:47:10 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/10/26 02:25:05 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/10/28 03:39:35 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,44 +53,41 @@ ClapTrap::~ClapTrap(void)
 
 void ClapTrap::attack(const std::string& target)
 {
-	std::cout << "in attack!\n";
 	std::cout << BYEL;
 	if (this->_energy > 0)
 	{
 		this->_energy -= 1;
-		std::cout << "ClapTrap " << this->_name << " attack " << target;
-		std::cout << ", causing " << this->_attack << " point of damage!" << std::endl;
-		std::cout << "hit point = " << this->_hitpoint << std::endl;
+		std::cout << this->_name << " attack," << target;
+		std::cout << " causing " << this->_attack << " point of damage!" << std::endl;
+		std::cout << BWHT"hit point after attack = " << this->_hitpoint << std::endl;
 	}
 	else
-		std::cout << "ClapTrap " << this->_name << " not enough energy\n";
+		std::cout << this->_name << " not enough energy\n";
 	std::cout << RESET;
 }
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
-	std::cout << "in take damage!\n";
 	std::cout << BRED;
 	this->_hitpoint -= amount;
-	std::cout << "hit point = " << this->_hitpoint << std::endl;
 	std::cout << RESET;
+	std::cout << BWHT"hit point after take Damage = " << this->_hitpoint << std::endl;
 }
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
-	std::cout << "in be repair\n";
 	std::cout << BGRN;
 	if (this->_energy > 0)
 	{
 		this->_energy -= 1;
 		this->_hitpoint += amount;
-		std::cout << "ClapTrap " << this->_name << " got repair ";
+		std::cout << this->_name << " got repair ";
 		std::cout << ", causing " << amount << " point of repair!" << std::endl;
-		std::cout << "hit point = " << this->_hitpoint << std::endl;
+		std::cout << BWHT"hit point after beRepair = " << this->_hitpoint << std::endl;
 	}
 	else
 	{
-		std::cout << "ClapTrap " << this->_name;
+		std::cout << this->_name;
 		std::cout << " Energy not enough to get repair.\n";
 	}
 	std::cout << RESET;
