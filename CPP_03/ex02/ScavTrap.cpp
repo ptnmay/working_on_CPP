@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 02:00:51 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/10/28 03:40:56 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/10/28 16:51:18 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,17 @@
 
 ScavTrap::ScavTrap()
 {
-	std::cout << "ScavTrap Constructor called\n";
+	// std::cout << "ScavTrap Constructor called\n";
 }
 
 ScavTrap::~ScavTrap()
 {
-	std::cout << BCYN"ScavTrap Destructor Called.\n" << RESET;
+	// std::cout << BCYN"ScavTrap Destructor Called.\n" << RESET;
 }
 
 ScavTrap::ScavTrap(ScavTrap const &STcpy) : ClapTrap(STcpy)
 {
-	std::cout << "ScavTrap Copy Constructor Called" << std::endl;
+	// std::cout << "ScavTrap Copy Constructor Called" << std::endl;
 }
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
@@ -32,8 +32,8 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 	this->_hitpoint = 100;
 	this->_energy = 50;
 	this->_attack = 20;
-	std::cout << BMAG"ScavTrap Constructor Called" << std::endl;
-	std::cout << RESET;
+	// std::cout << BMAG"ScavTrap Constructor Called" << std::endl;
+	// std::cout << RESET;
 }
 
 ScavTrap & ScavTrap::operator= (ScavTrap const &STcpy)

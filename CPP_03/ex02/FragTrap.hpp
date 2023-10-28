@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/20 00:02:53 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/10/28 16:55:12 by psaeyang         ###   ########.fr       */
+/*   Created: 2023/10/28 16:26:59 by psaeyang          #+#    #+#             */
+/*   Updated: 2023/10/28 16:29:36 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
-#include "FragTrap.hpp"
+#ifndef	FRAGTRAP_HPP
+# define FRAGTRAP_HPP
 
-int	main(void)
+#include "ClapTrap.hpp"
+
+class FragTrap : public ClapTrap
 {
-	FragTrap	Frag("Frag");	
-	FragTrap	Trap("Trap");	
+		public:
+				FragTrap();
+				~FragTrap();
+				FragTrap(FragTrap const &FTcpy);
+				FragTrap(std::string const name);
+				FragTrap & operator = (FragTrap const &FTcpy);
+				
+				void  highFivesGuys();
+};
 
-	Frag.attack("Trap");
-	Trap.takeDamage(30);
-	Trap.beRepaired(10);
-	Frag.highFivesGuys();
-	return 0;
-}
+#endif
