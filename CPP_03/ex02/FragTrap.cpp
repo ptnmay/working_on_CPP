@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 16:26:47 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/10/28 16:52:00 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/10/29 02:54:28 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,5 @@ FragTrap & FragTrap::operator= (FragTrap const &STcpy)
 
 void	FragTrap:: highFivesGuys()
 {
-	std::cout << BCYN"\n~~~hello from  highFivesGuys~~~\n\n" << RESET;
+	std::cout << BCYN"\n~~~hello. This is highFivesGuys~~~\n\n" << RESET;
 }

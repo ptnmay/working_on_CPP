@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 23:47:10 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/10/28 16:56:03 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/10/29 02:53:14 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,12 @@ void ClapTrap::attack(const std::string& target)
 	}
 	else
 		std::cout << this->_name << " not enough energy\n";
+	std::cout << BCYN;
+	std::cout << this->_name << " : hit point = " << this->_hitpoint << std::endl;
+	std::cout << this->_name << " : energy point = " << this->_energy << std::endl;
+	std::cout << this->_name << " : attack damage point = " << this->_attack << std::endl;
+	std::cout << BWHT;
+	std::cout << "---------------------------------------------------\n";
 	std::cout << RESET;
 }
 
@@ -70,7 +76,12 @@ void ClapTrap::takeDamage(unsigned int amount)
 	std::cout << BRED;
 	this->_hitpoint -= amount;
 	std::cout << this->_name;
-	std::cout << " : hit point after take Damage = " << this->_hitpoint << std::endl;
+	std::cout << " : hit point after take Damage = " << this->_hitpoint << std::endl;	std::cout << BCYN;
+	std::cout << this->_name << " : hit point = " << this->_hitpoint << std::endl;
+	std::cout << this->_name << " : energy point = " << this->_energy << std::endl;
+	std::cout << this->_name << " : attack damage point = " << this->_attack << std::endl;
+	std::cout << BWHT;
+	std::cout << "---------------------------------------------------\n";
 	std::cout << RESET;
 }
 
@@ -88,5 +99,11 @@ void ClapTrap::beRepaired(unsigned int amount)
 		std::cout << this->_name;
 		std::cout << " Energy " << this->_energy << " is not enough to get repair.\n";
 	}
+	std::cout << BCYN;
+	std::cout << this->_name << " : hit point = " << this->_hitpoint << std::endl;
+	std::cout << this->_name << " : energy point = " << this->_energy << std::endl;
+	std::cout << this->_name << " : attack damage point = " << this->_attack << std::endl;
+	std::cout << BWHT;
+	std::cout << "---------------------------------------------------\n";
 	std::cout << RESET;
 }

@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 00:02:53 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/10/28 03:22:09 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/10/29 02:21:30 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 int	main(void)
 {
-	ScavTrap	st("Robot");
-	ClapTrap	ct("Rudeus");
+	ScavTrap	st("Thor");
+	ClapTrap	ct("Loki");
 
-	st.attack("Red Dragon");
-	ct.attack("Red Dragon");
+	st.attack("Loki");
+	ct.attack("Thor");
 
 	st.takeDamage(20);
 	st.beRepaired(10);

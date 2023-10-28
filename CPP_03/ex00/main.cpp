@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 00:02:53 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/10/26 02:13:49 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/10/29 02:41:49 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 int main()
 {
-	ClapTrap	a("a");
-	ClapTrap	b("b");
+	ClapTrap	a("You");
+	ClapTrap	b("I");
 	
-	a.attack("b");
+	a.attack("I");
 	b.takeDamage(2);
 	b.beRepaired(10);
 }
