@@ -6,7 +6,7 @@
 #    By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/31 00:06:28 by psaeyang          #+#    #+#              #
-#    Updated: 2023/10/31 00:06:30 by psaeyang         ###   ########.fr        #
+#    Updated: 2023/10/31 00:43:43 by psaeyang         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ NAME = FragTrap
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
+SRC = main.cpp Cat.cpp Dog.cpp Animal.cpp
 OBJ = ${SRC:.cpp=.o}
 
 all: $(NAME)
