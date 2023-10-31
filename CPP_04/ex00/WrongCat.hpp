@@ -1,20 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/31 00:10:50 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/11/01 04:25:22 by psaeyang         ###   ########.fr       */
+/*   Created: 2023/11/01 05:35:37 by psaeyang          #+#    #+#             */
+/*   Updated: 2023/11/01 05:45:05 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef	ANIMAL_HPP
-# define ANIMAL_HPP
+#ifndef	WRONGCAT_HPP
+# define WRONGCAT_HPP
 
-#include <iostream>
-#include <string>
+#include "WrongAnimal.hpp"
 
 # define BBLK "\e[1;30m"
 # define BRED "\e[1;31m"
@@ -26,18 +25,17 @@
 # define BWHT "\e[1;37m"
 # define RESET "\e[0m"
 
-class Animal
+class WrongCat : public WrongAnimal
 {
 		protected:
 				std::string type;
 		public:
-				Animal();
-				~Animal();
-				Animal(Animal const &other);
-				Animal &operator=(Animal const &cpy);
+				WrongCat();
+				~WrongCat();
+				WrongCat(WrongCat const &other);
+				WrongCat &operator=(WrongCat const &cpy);
 				
-				std::string getType() const;
-				virtual void makeSound() const;
+				void makeSound() const;
 };
 
 #endif
