@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 02:49:57 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/11/02 02:55:13 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/11/02 05:27:28 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,13 @@ Cat::Cat()
 {
 	std::cout << BMAG"| Cat | Constructor called\n" << RESET;
 	this->type = "Cat";
-	
+	this->_brain = new Brain();
 }
 
 Cat::~Cat()
 {
 	std::cout << BMAG"| Cat | Destructor called\n" << RESET;
+	delete _brain;
 }
 
 Cat::Cat(Cat const &other)

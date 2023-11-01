@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 02:16:41 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/11/02 02:55:05 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/11/02 05:24:34 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ Brain::Brain(Brain const &other)
 Brain & Brain::operator=(Brain const &cpy)
 {
 	std::cout << BMAG"| Brain | Assignment Operator Called" << RESET << std::endl;
-	// if (this != &cpy)
-		// this->type = cpy.type;
+	if (this != &cpy)
+		for (int i = 0; i < 100; i++;)
+			this->ideas[i] = cpy.ideas[i];
 	return *this;
 }
