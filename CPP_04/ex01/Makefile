@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/10/31 00:06:37 by psaeyang          #+#    #+#              #
-#    Updated: 2023/10/31 00:06:39 by psaeyang         ###   ########.fr        #
+#    Created: 2023/10/31 00:06:28 by psaeyang          #+#    #+#              #
+#    Updated: 2023/11/02 02:05:57 by psaeyang         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,12 +19,12 @@ COMPILE = echo "$(BCYN)$(NAME) compiled....$(RES)"
 CLEAN = echo "$(BYEL)$(NAME) clean....$(RES)"
 FCLEAN = echo "$(BRED)$(NAME) fclean....$(RES)"
 
-NAME = FragTrap
+NAME = Animal
 
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
+SRC = Animal.cpp WrongAnimal.cpp Cat.cpp Dog.cpp WrongCat.cpp main.cpp Brain.cpp
 OBJ = ${SRC:.cpp=.o}
 
 all: $(NAME)
