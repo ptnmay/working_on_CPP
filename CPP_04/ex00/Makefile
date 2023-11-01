@@ -6,7 +6,7 @@
 #    By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/31 00:06:28 by psaeyang          #+#    #+#              #
-#    Updated: 2023/11/01 05:38:49 by psaeyang         ###   ########.fr        #
+#    Updated: 2023/11/02 01:21:33 by psaeyang         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ NAME = Animal
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = main.cpp Cat.cpp Dog.cpp Animal.cpp WrongAnimal.cpp WrongCat.cpp
+SRC = Animal.cpp WrongAnimal.cpp Cat.cpp Dog.cpp WrongCat.cpp main.cpp
 OBJ = ${SRC:.cpp=.o}
 
 all: $(NAME)

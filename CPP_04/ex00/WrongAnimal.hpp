@@ -6,16 +6,16 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 05:29:58 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/11/01 05:43:24 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/11/02 01:19:21 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef	WRONGANIMAL_HPP
 # define WRONGANIMAL_HPP
 
-#include <iostream>
-#include <string>
-#include "WrongCat.hpp"
+# include <iostream>
+# include <string>
+// # include "WrongCat.hpp"
 
 # define BBLK "\e[1;30m"
 # define BRED "\e[1;31m"

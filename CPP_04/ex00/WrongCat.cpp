@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 05:35:41 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/11/01 05:44:21 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/11/02 01:33:46 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,5 @@ WrongCat & WrongCat::operator=(WrongCat const &cpy)
 
 void WrongCat::makeSound() const
 {
-	std::cout << BRED"Unknown sound from WrongCat\n" << RESET;
+	std::cout << BYEL"Unknown sound from WrongCat\n" << RESET;
 }

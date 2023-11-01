@@ -6,42 +6,42 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 00:10:55 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/11/01 05:33:41 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/11/02 01:23:37 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "WrongAnimal.hpp"
+#include "Animal.hpp"
 
-WrongAnimal::WrongAnimal()
+Animal::Animal()
 {
-	std::cout << BWHT"| WrongAnimal | Constructor called\n" << RESET;
+	std::cout << BWHT"| Animal | Constructor called\n" << RESET;
 }
 
-WrongAnimal::~WrongAnimal()
+Animal::~Animal()
 {
-	std::cout << BWHT"| WrongAnimal | Destructor called\n" << RESET;
+	std::cout << BWHT"| Animal | Destructor called\n" << RESET;
 }
 
-WrongAnimal::WrongAnimal(WrongAnimal const &other)
+Animal::Animal(Animal const &other)
 {
-	std::cout << BWHT"| WrongAnimal | Copy Constructor Called" << RESET << std::endl;
+	std::cout << BWHT"| Animal | Copy Constructor Called" << RESET << std::endl;
 	*this = other;
 }
 
-WrongAnimal & WrongAnimal::operator=(WrongAnimal const &cpy)
+Animal & Animal::operator=(Animal const &cpy)
 {
-	std::cout << BWHT"| WrongAnimal | Assignment Operator Called" << RESET << std::endl;
+	std::cout << BWHT"| Animal | Assignment Operator Called" << RESET << std::endl;
 	if (this != &cpy)
 		this->type = cpy.type;
 	return *this;
 }
 
-std::string WrongAnimal::getType() const
+std::string Animal::getType() const
 {
 	return (type);
 }
 
-void WrongAnimal::makeSound() const
+void Animal::makeSound() const
 {
-	std::cout << BRED"Unknown sound from WrongAnimal\n" << RESET;
+	std::cout << BRED"Unknown sound from Animal\n" << RESET;
 }

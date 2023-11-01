@@ -6,11 +6,13 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 04:34:40 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/11/01 05:26:39 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/11/02 01:33:30 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
+#include "WrongAnimal.hpp"
+#include "WrongCat.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
 
@@ -24,6 +26,22 @@ int main()
 	i->makeSound(); //will output the cat sound!
 	j->makeSound();
 	meta->makeSound();
+	std::cout << std::endl;
+	delete meta;
+	delete i;
+	delete j;
+
+	std::cout << "\n=========================================" << std::endl;
+	std::cout << std::endl;
+
+	const WrongAnimal* wrong_meta = new WrongAnimal();
+	const WrongAnimal* wrong_cat = new WrongCat();
+	wrong_cat->makeSound();
+	wrong_meta->makeSound();
+	
+	std::cout << std::endl;
+	delete wrong_meta;
+	delete wrong_cat;
 	return 0;
 }
 

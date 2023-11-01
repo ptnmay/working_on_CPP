@@ -6,15 +6,15 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 00:10:50 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/11/01 04:25:22 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/11/02 01:17:40 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef	ANIMAL_HPP
 # define ANIMAL_HPP
 
-#include <iostream>
-#include <string>
+# include <iostream>
+# include <string>
 
 # define BBLK "\e[1;30m"
 # define BRED "\e[1;31m"
