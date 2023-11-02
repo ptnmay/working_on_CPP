@@ -6,7 +6,7 @@
 #    By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/31 00:06:28 by psaeyang          #+#    #+#              #
-#    Updated: 2023/11/02 18:55:58 by psaeyang         ###   ########.fr        #
+#    Updated: 2023/11/02 19:38:25 by psaeyang         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,12 +19,12 @@ COMPILE = echo "$(BCYN)$(NAME) compiled....$(RES)"
 CLEAN = echo "$(BYEL)$(NAME) clean....$(RES)"
 FCLEAN = echo "$(BRED)$(NAME) fclean....$(RES)"
 
-NAME = Animal
+NAME = AAnimal
 
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98 #-g -fsanitize=address
 
-SRC = Animal.cpp Cat.cpp Dog.cpp main.cpp Brain.cpp
+SRC = AAnimal.cpp Cat.cpp Dog.cpp main.cpp Brain.cpp
 OBJ = ${SRC:.cpp=.o}
 
 all: $(NAME)

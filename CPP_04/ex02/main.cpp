@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 02:05:32 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/11/02 19:15:12 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/11/02 19:39:10 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 
 int	main()
 {
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
+	const AAnimal* j = new Dog();
+	const AAnimal* i = new Cat();
 
 	delete j;
 	delete i;
@@ -27,14 +27,14 @@ int	main()
 	std::cout << "\n=========================================" << std::endl;
 	Cat basic;
 	for (int i = 0; i < 5; i++)
-		basic.setIdeas(i, "blah");
+		basic.setIdeas(i, "food");
 	std::cout << "basic before change :" << std::endl;
 	for (int i = 0; i < 5; i++)
 		std::cout << i << " = " << basic.getIdeas(i) << std::endl;
 	{
 		Cat tmp = basic;
 		for (int i = 0; i < 5; i++)
-			tmp.setIdeas(i, "boo");
+			tmp.setIdeas(i, "sleep");
 		// TEST PRINT BOTH basic and tmp
 		std::cout << "basic:" << std::endl;
 		for (int i = 0; i < 5; i++)
