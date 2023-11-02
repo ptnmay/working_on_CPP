@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   AAnimal.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 02:50:12 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/11/02 19:03:22 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/11/02 19:14:34 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef	ANIMAL_HPP
-# define ANIMAL_HPP
+#ifndef	AANIMAL_HPP
+# define AANIMAL_HPP
 
 # include <iostream>
 # include <string>
@@ -27,19 +27,18 @@
 # define BWHT "\e[1;37m"
 # define RESET "\e[0m"
 
-class Animal
+class AAnimal
 {
 		protected:
 				std::string type;
 		public:
-				Animal();
-				// ~Animal();
-				Animal(Animal const &other);
-				virtual ~Animal();
-				Animal &operator=(Animal const &cpy);
+				AAnimal();
+				AAnimal(AAnimal const &other);
+				virtual ~AAnimal();
+				AAnimal &operator=(AAnimal const &cpy);
 				
 				std::string getType() const;
-				virtual void makeSound() const;
+				virtual void makeSound() const = 0;
 };
 
 #endif

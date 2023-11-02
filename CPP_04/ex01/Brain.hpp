@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 02:16:55 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/11/02 02:52:38 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/11/02 18:18:27 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,9 @@ class Brain
 				~Brain();
 				Brain(Brain const &other);
 				Brain &operator=(Brain const &cpy);
-
+				
+				void	setIdeas(int i, std::string idea);
+				std::string	getIdeas(int i) const;
 				
 				
 };

@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 02:50:30 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/11/02 02:58:52 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/11/02 17:42:50 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ class Dog : public Animal
 				Dog &operator=(Dog const &cpy);
 				
 				void makeSound() const;
+				void	setIdeas(int i, std::string idea);
+				std::string	getIdeas(int i) const;
 };
 
 #endif

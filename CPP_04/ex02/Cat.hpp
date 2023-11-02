@@ -6,16 +6,16 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 02:50:22 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/11/02 17:42:28 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/11/02 19:15:03 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef	CAT_HPP
 # define CAT_HPP
 
-# include "Animal.hpp"
+# include "AAnimal.hpp"
 
-class Cat : public Animal
+class Cat : public AAnimal
 {
 		private:
 				Brain* _brain;
