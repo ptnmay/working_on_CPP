@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 20:05:48 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/11/19 00:39:30 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/11/19 01:32:27 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ class Bureaucrat
 				Bureaucrat(std::string n, int g);
 				std::string getname() const;
 				int getgrade() const;
+				void	increaseGrade(int amount);
+				void	decreaseGrade(int amount);
 
 		class GradeTooHighException : public std::exception
 		{

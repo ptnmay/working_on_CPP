@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 20:13:03 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/11/19 00:58:58 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/11/19 01:32:06 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,20 @@ std::ostream& operator<<(std::ostream& print, Bureaucrat const& show)
 {
 	print << show.getname() << " , bureaucrat grade " << show.getgrade() << std::endl;
 	return print;
+}
+
+void	Bureaucrat::increaseGrade(int amount)
+{
+	if (this->grade - amount < 1)
+		throw GradeTooHighException();
+	this->grade -= amount;
+	std::cout << BBLU << this->name << " was upgraded [" << amount << "] levels." << RESET << std::endl;
+}
+
+void	Bureaucrat::decreaseGrade(int amount)
+{
+	if (this->grade - amount > 150)
+		throw GradeTooLowException();
+	this->grade += amount;
+	std::cout << BBLU << this->name << " was degraded [" << amount << "] levels." << RESET << std::endl;
 }
