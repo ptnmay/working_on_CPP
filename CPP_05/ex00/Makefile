@@ -6,7 +6,7 @@
 #    By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/03 23:41:18 by psaeyang          #+#    #+#              #
-#    Updated: 2023/11/03 23:41:20 by psaeyang         ###   ########.fr        #
+#    Updated: 2023/11/18 20:18:51 by psaeyang         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ NAME = AAnimal
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98 #-g -fsanitize=address
 
-SRC = AAnimal.cpp Cat.cpp Dog.cpp main.cpp Brain.cpp
+SRC = Main.cpp Bureaucrat.cpp
 OBJ = ${SRC:.cpp=.o}
 
 all: $(NAME)
