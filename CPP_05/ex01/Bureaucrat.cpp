@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 20:13:03 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/11/19 01:37:57 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/11/25 00:07:43 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,20 @@
 
 Bureaucrat::~Bureaucrat()
 {}
+
+Bureaucrat::Bureaucrat(Bureaucrat const& other)
+{
+	std::cout << BWHT"| Bureaucrat | Copy Constructor Called" << RESET << std::endl;
+	*this = other;
+}
+
+Bureaucrat & Bureaucrat:: operator=(Bureaucrat const& cpy)
+{
+	std::cout << BWHT"| Bureaucrat | Assignment Operator Called" << RESET << std::endl;
+	if (this != &cpy)
+		this->grade = cpy.grade;
+	return *this;
+}
 
 Bureaucrat::Bureaucrat(std::string n, int g)
 : name(n)

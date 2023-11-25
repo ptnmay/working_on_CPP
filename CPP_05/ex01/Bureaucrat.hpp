@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 20:05:48 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/11/19 01:37:06 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/11/24 23:39:01 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,10 @@ class Bureaucrat
 		public:
 				~Bureaucrat();
 				Bureaucrat(std::string n, int g);
+				Bureaucrat(Bureaucrat const& other);
+				Bureaucrat& operator=(Bureaucrat const& cpy);
 				std::string getName() const;
-				int getGrade() const;
+				int 	getGrade() const;
 				void	increaseGrade(int amount);
 				void	decreaseGrade(int amount);
 
