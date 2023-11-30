@@ -6,7 +6,7 @@
 #    By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/03 23:41:18 by psaeyang          #+#    #+#              #
-#    Updated: 2023/11/18 23:34:54 by psaeyang         ###   ########.fr        #
+#    Updated: 2023/12/01 03:02:34 by psaeyang         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ NAME = Grade
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98 #-g -fsanitize=address
 
-SRC = main.cpp Bureaucrat.cpp
+SRC = main.cpp Bureaucrat.cpp Form.cpp
 OBJ = ${SRC:.cpp=.o}
 
 all: $(NAME)

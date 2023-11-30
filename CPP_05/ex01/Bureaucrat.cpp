@@ -6,14 +6,16 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 20:13:03 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/12/01 01:38:02 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/12/01 02:30:42 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
 Bureaucrat::~Bureaucrat()
-{}
+{
+	std::cout << BRED << "Bureaucrat Destructor called\n" << RESET;
+}
 
 Bureaucrat::Bureaucrat(Bureaucrat const& other)
 {
