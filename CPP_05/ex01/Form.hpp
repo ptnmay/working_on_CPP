@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 02:07:02 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/12/21 02:26:35 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/12/21 04:02:54 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,15 +37,23 @@ class Form
 		int			getSignExec() const;
 		
 		void		beSigned(Bureaucrat const& bureacrat);
-		class GradeTooLowException : public std::exception
-		{
-			public:
-				const char* what() const throw();
-		};
+		
 		class GradeTooHighException : public std::exception
 		{
 			public:
-				const char* what() const throw();
+				virtual const char* what() const throw()
+				{
+					return ("Grade too high");
+				}
+		};
+		
+		class GradeTooLowException : public std::exception
+		{
+			public:
+				virtual const char* what() const throw()
+				{
+					return ("Grade too Low");
+				}
 		};
 };
 

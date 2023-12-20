@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 20:05:48 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/12/21 02:26:07 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/12/21 04:02:45 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ class Bureaucrat
 				{
 					return ("Grade too Low");
 				}
-		};		
+		};
 };
 
 std::ostream& operator<<(std::ostream& print, Bureaucrat const& show);
