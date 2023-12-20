@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 02:07:02 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/12/03 02:57:08 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/12/21 02:26:35 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define FORM_HPP
 
 # include "Bureaucrat.hpp"
+
+class Bureaucrat;
 
 class Form
 {
@@ -46,5 +48,7 @@ class Form
 				const char* what() const throw();
 		};
 };
+
+std::ostream&	operator<<(std::ostream& print, Form const& show);
 
 #endif

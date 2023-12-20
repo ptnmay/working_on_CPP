@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 20:13:03 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/12/01 02:30:42 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/12/21 02:20:19 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,4 +71,18 @@ void	Bureaucrat::decreaseGrade(int amount)
 		throw GradeTooLowException();
 	this->grade += amount;
 	std::cout << BYEL << this->name << " was degraded [" << amount << "] levels." << RESET << std::endl;
+}
+
+void	Bureaucrat::signForm(Form& form)
+{
+	try
+	{
+		form.beSigned(*this);
+		std::cout << BGRN << this->name << " signed " << form.getName() << RESET << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cout << BRED << this->name << " couldn't sign " << form.getName();
+		std::cout << " because " << e.what() << RESET << std::endl;
+	}
 }
