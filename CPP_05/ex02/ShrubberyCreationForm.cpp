@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 16:05:10 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/12/26 23:23:36 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/12/27 00:39:15 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,15 +37,19 @@ ShrubberyCreationForm&	ShrubberyCreationForm::operator=(ShrubberyCreationForm co
 	return *this;
 }
 
-std::ostream&	operator<<(std::ostream& print, ShrubberyCreationForm const& show)
+void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
-	print << "ShrubberyCreationForm's " << show.getName();
-	print << ", Signed grade required : " << show.getSignG();
-	print << ", Execute grade required : " << show.getSignExec() << std::endl;
-	print << "Signed status : ";
-	if (show.getSign())
-		print << BGRN << "Signed. [✔]" << RESET;
-	else
-		print << BRED << "Not Signed yet. [ ]" << RESET;
-	return (print);
+	std::ofstream	outFile;
+	std::string		file;
+
+	if (!this->getSign())
+		throw AForm::NotSignException();
+	if (executor.getGrade() > this->getSignExec())
+		throw AForm::GradeTooLowException();
+	file = this->_target + "_shrubbery";
+	outFile.open(file.c_str());
+	if (!outFile.is_open())
+		throw ShrubberyCreationForm::CannotOpenException();
+	outFile << ASCII_TREES;
+	outFile.close();
 }

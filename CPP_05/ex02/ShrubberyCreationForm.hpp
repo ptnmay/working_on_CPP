@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 16:05:04 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/12/26 23:21:40 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/12/27 00:38:45 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,35 @@ class ShrubberyCreationForm : public AForm
 		ShrubberyCreationForm(std::string target);
 		ShrubberyCreationForm(ShrubberyCreationForm const& other);
 		ShrubberyCreationForm& operator=(ShrubberyCreationForm const& cpy);
+
+		void execute(Bureaucrat const & executor) const;
+		
+		class CannotOpenException : public std::exception
+		{
+			public:
+				virtual const char* what() const throw()
+				{
+					return ("Can't open file");
+				}
+		};
 };
+
+#define ASCII_TREES "\
+       ....                             \n\
+    .=**+===:.                          \n\
+   :***=======.                         \n\
+   +**+=======-          ...            \n\
+   -**+=======:    :::-+*++==-====:.    \n\
+  :***+=======-  :*****+=============-. \n\
+  ***==========- +***+=================.\n\
+ .**+==========- :***==================.\n\
+ .+*+==========-  ***==================:\n\
+ +**+===*=======: ***+=======*=========-\n\
+.***====#*+=====- :***+======#++======-.\n\
+ +**====##======:  .-+***++++#*====-:.  \n\
+ :**+==*#*=====-        ..::+#+:::.     \n\
+  .=*+=+##===-.             =#*         \n\
+     .-*##-..               +##.        \n\
+       +**:                 ***:        "
 
 #endif

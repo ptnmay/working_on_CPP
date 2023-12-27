@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 15:47:35 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/12/21 15:50:28 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/12/27 18:35:27 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,16 @@ class AForm
 					return ("Grade too Low");
 				}
 		};
+		
+		class NotSignException : public std::exception
+		{
+			public:
+				virtual const char* what() const throw()
+				{
+					return ("Form didn't sign");
+				}
+		};
+	virtual void	execute(Bureaucrat const& executor) const = 0;
 };
 
 std::ostream&	operator<<(std::ostream& print, AForm const& show);

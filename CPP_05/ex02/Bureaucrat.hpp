@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 15:46:56 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/12/21 15:46:58 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/12/27 18:35:45 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <string>
 # include <exception>
 
-# include "Form.hpp"
+# include "AForm.hpp"
 
 # define BBLK "\e[1;30m"
 # define BRED "\e[1;31m"
@@ -30,7 +30,7 @@
 # define BWHT "\e[1;37m"
 # define RESET "\e[0m"
 
-class Form;
+class AForm;
 
 class Bureaucrat
 {
@@ -47,7 +47,8 @@ class Bureaucrat
 				int 	getGrade() const;
 				void	increaseGrade(int amount);
 				void	decreaseGrade(int amount);
-				void	signForm(Form& form);
+				void	signForm(AForm& form);
+				void	executeForm(AForm const& form);
 
 		class GradeTooHighException : public std::exception
 		{
