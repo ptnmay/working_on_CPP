@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 15:46:48 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/12/27 18:48:09 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/12/27 19:01:01 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,28 +53,29 @@ void	testRobot()
 	}
 }
 
-// void	testPresiden()
-// {
-// 	try
-// 	{
-// 		PresidentialPardonForm	form("Nano");
-// 		Bureaucrat	obj("Boji", 5);
+void	testPresiden()
+{
+	try
+	{
+		PresidentialPardonForm	form("Nano");
+		Bureaucrat	obj("Boji", 5);
 
-// 		std::cout << form << std::endl;
-// 		std::cout << obj << std::endl;
-// 		obj.signForm(form);
-// 		obj.executeForm(form);
-// 	}
-// 	catch (std::exception & e)
-// 	{
-// 		std::cout << RED << e.what() << RESET << std::endl;
-// 	}
-// }
+		std::cout << form << std::endl;
+		std::cout << obj << std::endl;
+		obj.signForm(form);
+		obj.executeForm(form);
+		std::cout << form << std::endl;
+	}
+	catch (std::exception & e)
+	{
+		std::cout << BRED << e.what() << RESET << std::endl;
+	}
+}
 
 int	main(void)
 {
 	// testShrub();
-	testRobot();
-	// testPresiden();
+	// testRobot();
+	testPresiden();
 	return (0);
 }
