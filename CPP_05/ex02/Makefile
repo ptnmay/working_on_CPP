@@ -6,7 +6,7 @@
 #    By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/03 23:41:18 by psaeyang          #+#    #+#              #
-#    Updated: 2023/12/27 18:37:27 by psaeyang         ###   ########.fr        #
+#    Updated: 2023/12/27 18:45:58 by psaeyang         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ NAME = Grade
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98 #-g -fsanitize=address
 
-SRC = main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp
+SRC = main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp
 OBJ = ${SRC:.cpp=.o}
 
 all: $(NAME)
