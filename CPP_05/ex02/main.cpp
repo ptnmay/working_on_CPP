@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 15:46:48 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/12/27 19:04:45 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/12/30 01:41:14 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@ void	testShrub()
 	try
 	{
 		ShrubberyCreationForm	form("Nano");
-		Bureaucrat	obj("Boji", 145);
+		Bureaucrat	obj("Boji", 137);
 
 		std::cout << form << std::endl;
 		std::cout << obj << std::endl;
 		obj.signForm(form);
-		obj.signForm(form);
+		obj.executeForm(form);
 		std::cout << form << std::endl;
 	}
 	catch (std::exception & e)
@@ -76,9 +76,9 @@ int	main(void)
 {
 	testShrub();
 	std::cout << "===========================================\n";
-	testRobot();
-	std::cout << "===========================================\n";
-	testPresiden();
-	std::cout << "===========================================\n";
-	return (0);
+	// testRobot();
+	// std::cout << "===========================================\n";
+	// testPresiden();
+	// std::cout << "===========================================\n";
+	// return (0);
 }
