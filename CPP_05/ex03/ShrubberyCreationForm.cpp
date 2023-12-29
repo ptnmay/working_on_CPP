@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 16:05:10 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/12/27 00:39:15 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/12/30 01:42:36 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,10 @@ ShrubberyCreationForm&	ShrubberyCreationForm::operator=(ShrubberyCreationForm co
 {
 	// std::cout << BWHT"| ShrubberyCreationForm | Assignment Operator Called" << RESET << std::endl;
 	if (this != &cpy)
+	{
+		AForm::operator=(cpy);
 		this->_target = cpy._target;
+	}
 	return *this;
 }
 

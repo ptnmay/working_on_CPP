@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 15:46:48 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/12/27 19:04:45 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/12/30 01:42:02 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	testShrub()
 		std::cout << form << std::endl;
 		std::cout << obj << std::endl;
 		obj.signForm(form);
-		obj.signForm(form);
+		obj.executeForm(form);
 		std::cout << form << std::endl;
 	}
 	catch (std::exception & e)
