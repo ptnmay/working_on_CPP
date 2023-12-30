@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/29 19:27:50 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/12/30 03:01:30 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/12/30 21:42:33 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,12 @@ Intern::Intern(Intern const& other)
 
 Intern& Intern::operator=(Intern const& cpy)
 {
-	*this = cpy;
-	return *this;
+	if (this != &cpy)
+	{
+		for (int i = 0; i < 3; i++)
+			this->_formName[i] = cpy._formName[i];
+	}
+	return (*this);
 }
 
 Intern::~Intern()
@@ -37,7 +41,24 @@ Intern::~Intern()
 	
 }
 
-AForm*	makeForm(std::string const formName, std::string const targetName) const
+AForm*	Intern::makeForm(std::string const formName, std::string const targetName) const
 {
-	
+	for (int i = 0; i < 3; i++)
+	{
+		if (formName.compare(this->_formName[i]) == 0)
+		{
+			std::cout << BGRN << "Intern create " << this->_formName[i] << std::endl;
+			switch(i)
+			{
+				case 0:
+					return new ShrubberyCreationForm(targetName);
+				case 1:
+					return new RobotomyRequestForm(targetName);
+				case 2:
+					return new PresidentialPardonForm(targetName);
+			}
+		}
+	}
+	std::cout << BRED << formName << "doesn't exit\n" << RESET;
+	return NULL;
 }
