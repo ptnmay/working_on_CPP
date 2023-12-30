@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/29 19:27:50 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/12/30 21:42:33 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/12/30 22:08:00 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ AForm*	Intern::makeForm(std::string const formName, std::string const targetName
 	{
 		if (formName.compare(this->_formName[i]) == 0)
 		{
-			std::cout << BGRN << "Intern create " << this->_formName[i] << std::endl;
+			std::cout << BCYN << "Intern create " << this->_formName[i] << RESET << std::endl;
 			switch(i)
 			{
 				case 0:
@@ -60,5 +60,5 @@ AForm*	Intern::makeForm(std::string const formName, std::string const targetName
 		}
 	}
 	std::cout << BRED << formName << "doesn't exit\n" << RESET;
-	return NULL;
+	return (NULL);
 }

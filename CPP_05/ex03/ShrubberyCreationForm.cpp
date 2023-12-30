@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 16:05:10 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/12/30 01:42:36 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/12/30 22:00:46 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target)
 : AForm("ShrubberyCreationForm", 145, 137), _target(target)
 {
-	std::cout << BYEL << "[ShrubberyCreationForm] Parametric Constructor Called\n" << RESET;
+	// std::cout << BYEL << "[ShrubberyCreationForm] Parametric Constructor Called\n" << RESET;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const& other)

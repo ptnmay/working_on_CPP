@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 16:07:10 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/12/27 18:45:24 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/12/30 22:01:08 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ RobotomyRequestForm::~RobotomyRequestForm()
 RobotomyRequestForm::RobotomyRequestForm(std::string target)
 : AForm("RobotomyRequestForm", 72, 45), _target(target)
 {
-	std::cout << BYEL << "[RobotomyRequestForm] Parametric Constructor Called\n" << RESET;
+	// std::cout << BYEL << "[RobotomyRequestForm] Parametric Constructor Called\n" << RESET;
 }
 
 RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const& other)

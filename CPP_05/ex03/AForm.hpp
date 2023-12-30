@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 15:47:35 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/12/30 02:05:20 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/12/30 21:58:54 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class AForm
 		int const	_execGrade;
 
 	public:
-		~AForm();
+		virtual ~AForm();
 		AForm(AForm const& other);
 		AForm& operator=(AForm const& cpy);
 		AForm(std::string const name, int const signGrade, int const execGrade);

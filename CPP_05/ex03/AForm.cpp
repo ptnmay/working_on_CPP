@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 15:47:13 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/12/30 21:54:16 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/12/30 21:59:58 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 AForm::~AForm()
 {
-	std::cout << BRED << "Bureaucrat Destructor called\n" << RESET;
+	// std::cout << BRED << "Bureaucrat Destructor called\n" << RESET;
 }
 
 AForm::AForm(std::string const name, int const signGrade, int const execGrade)
@@ -24,18 +24,18 @@ AForm::AForm(std::string const name, int const signGrade, int const execGrade)
 		throw AForm::GradeTooHighException();
 	else if (signGrade > 150 || execGrade > 150)
 		throw AForm::GradeTooLowException();
-	std::cout << BYEL << "[AForm] Parametric Constructor Called\n" << RESET;
+	// std::cout << BYEL << "[AForm] Parametric Constructor Called\n" << RESET;
 }
 
 AForm::AForm(AForm const& other) : _name(other._name), _sign(other._sign),
 _signGrade(other._signGrade), _execGrade(other._execGrade)
 {
-	std::cout << BWHT"| AForm | Copy Constructor Called" << RESET << std::endl;
+	// std::cout << BWHT"| AForm | Copy Constructor Called" << RESET << std::endl;
 }
 
 AForm&	AForm::operator=(AForm const& cpy)
 {
-	std::cout << BWHT"| AForm | Assignment Operator Called" << RESET << std::endl;
+	// std::cout << BWHT"| AForm | Assignment Operator Called" << RESET << std::endl;
 	if (this != &cpy)
 		this->_sign = cpy._sign;
 	return *this;

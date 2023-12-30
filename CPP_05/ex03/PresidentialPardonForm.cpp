@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 16:07:15 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/12/27 19:00:29 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/12/30 22:01:16 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ PresidentialPardonForm::~PresidentialPardonForm()
 PresidentialPardonForm::PresidentialPardonForm(std::string target)
 : AForm("PresidentialPardonForm", 25, 5), _target(target)
 {
-	std::cout << BYEL << "[PresidentialPardonForm] Parametric Constructor Called\n" << RESET;
+	// std::cout << BYEL << "[PresidentialPardonForm] Parametric Constructor Called\n" << RESET;
 }
 
 PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const& other)
