@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 15:46:48 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/12/30 22:14:11 by psaeyang         ###   ########.fr       */
+/*   Updated: 2024/01/01 21:36:43 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	main(void)
 	std::cout << "------------------------------------------\n";
 	rrf = someRandomIntern.makeForm("presidential pardon", "Bender");
 	std::cout << *rrf << std::endl;
-	Bureaucrat	obj("Oven", 2);
+	Bureaucrat	obj("Mew", 2);
 	obj.signForm(*rrf);
 	obj.executeForm(*rrf);
 	std::cout << *rrf << std::endl;
