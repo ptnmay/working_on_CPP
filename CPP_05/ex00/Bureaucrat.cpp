@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 20:13:03 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/12/01 01:38:02 by psaeyang         ###   ########.fr       */
+/*   Updated: 2024/01/01 21:08:25 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void	Bureaucrat::increaseGrade(int amount)
 
 void	Bureaucrat::decreaseGrade(int amount)
 {
-	if (this->grade - amount > 150)
+	if (this->grade + amount > 150)
 		throw GradeTooLowException();
 	this->grade += amount;
 	std::cout << BYEL << this->name << " was degraded [" << amount << "] levels." << RESET << std::endl;

@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 20:05:46 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/11/25 00:08:50 by psaeyang         ###   ########.fr       */
+/*   Updated: 2024/01/01 21:07:58 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int main()
 		std::cout << BCYN << test << RESET;
 		test.increaseGrade(2);
 		std::cout << BWHT << "getGrade:: " << test.getGrade() << RESET << std::endl;
-		test.decreaseGrade(3);
+		test.decreaseGrade(344);
 		std::cout << BWHT << "getGrade:: " << test.getGrade() << RESET << std::endl;
 		
 	}
