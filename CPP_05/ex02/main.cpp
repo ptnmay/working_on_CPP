@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 15:46:48 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/12/30 01:41:14 by psaeyang         ###   ########.fr       */
+/*   Updated: 2024/01/01 21:34:14 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ void	testShrub()
 {
 	try
 	{
-		ShrubberyCreationForm	form("Nano");
-		Bureaucrat	obj("Boji", 137);
+		ShrubberyCreationForm	form("CPP");
+		Bureaucrat	obj("Grammy", 137);
 
 		std::cout << form << std::endl;
 		std::cout << obj << std::endl;
@@ -38,8 +38,8 @@ void	testRobot()
 {
 	try
 	{
-		RobotomyRequestForm	form("Nano");
-		Bureaucrat	obj("Boji", 45);
+		RobotomyRequestForm	form("C++");
+		Bureaucrat	obj("Mos", 45);
 
 		std::cout << form << std::endl;
 		std::cout << obj << std::endl;
@@ -57,8 +57,8 @@ void	testPresiden()
 {
 	try
 	{
-		PresidentialPardonForm	form("Nano");
-		Bureaucrat	obj("Boji", 5);
+		PresidentialPardonForm	form("Code");
+		Bureaucrat	obj("Mai", 5);
 
 		std::cout << form << std::endl;
 		std::cout << obj << std::endl;
@@ -74,9 +74,9 @@ void	testPresiden()
 
 int	main(void)
 {
-	testShrub();
-	std::cout << "===========================================\n";
-	// testRobot();
+	// testShrub();
+	// std::cout << "===========================================\n";
+	testRobot();
 	// std::cout << "===========================================\n";
 	// testPresiden();
 	// std::cout << "===========================================\n";
