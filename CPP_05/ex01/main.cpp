@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 20:05:46 by psaeyang          #+#    #+#             */
-/*   Updated: 2023/12/21 04:26:30 by psaeyang         ###   ########.fr       */
+/*   Updated: 2023/12/26 21:32:09 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	testForm()
 
 int	main(void)
 {
-	// testForm();
+	testForm();
 	std::cout << std::endl;
 	try
 	{
@@ -60,6 +60,7 @@ int	main(void)
 		obj1.signForm(form);
 		std::cout << form << std::endl;
 		obj2.signForm(form);
+		std::cout << form << std::endl;
 	}
 	catch (std::exception & e)
 	{
