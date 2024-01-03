@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 21:19:31 by psaeyang          #+#    #+#             */
-/*   Updated: 2024/01/02 22:20:34 by psaeyang         ###   ########.fr       */
+/*   Updated: 2024/01/04 01:31:53 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,12 @@
 # define BWHT "\e[1;37m"
 # define RESET "\e[0m"
 
-#include <stdlib.h>
-#include <cstdlib>
-#include <iostream>
-#include <limits>
+# include <stdlib.h>
+# include <cstdlib>
+# include <iostream>
+# include <limits>
+# include <sstream>
+# include <iomanip>
 
 class ScalarConverter
 {
@@ -35,6 +37,12 @@ class ScalarConverter
 		~ScalarConverter();
 		ScalarConverter(ScalarConverter const& other);
 		ScalarConverter&	operator=(ScalarConverter const& cpy);
+
+		static void convert(char *av);
+		static void convertChar(double av);
+		static void convertInt(double av);
+		static void convertFloat(double av);
+		static void convertDouble(double av);
 };
 
 #endif
