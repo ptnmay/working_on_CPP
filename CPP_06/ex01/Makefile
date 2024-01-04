@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/01/01 22:58:04 by psaeyang          #+#    #+#              #
-#    Updated: 2024/01/01 22:58:05 by psaeyang         ###   ########.fr        #
+#    Created: 2024/01/04 18:58:20 by psaeyang          #+#    #+#              #
+#    Updated: 2024/01/04 19:01:51 by psaeyang         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,12 +19,12 @@ COMPILE = echo "$(BCYN)$(NAME) compiled....$(RES)"
 CLEAN = echo "$(BYEL)$(NAME) clean....$(RES)"
 FCLEAN = echo "$(BRED)$(NAME) fclean....$(RES)"
 
-NAME = Grade
+NAME = Serializer
 
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98 #-g -fsanitize=address
 
-SRC = main.cpp Bureaucrat.cpp
+SRC = main.cpp Serializer.cpp
 OBJ = ${SRC:.cpp=.o}
 
 all: $(NAME)
