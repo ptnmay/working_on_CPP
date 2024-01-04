@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 21:19:28 by psaeyang          #+#    #+#             */
-/*   Updated: 2024/01/04 02:17:00 by psaeyang         ###   ########.fr       */
+/*   Updated: 2024/01/05 05:02:55 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,13 +64,14 @@ void	ScalarConverter::convertInt(double d)
 {
 	if (isnan(d) == 1)
 		std::cout << BCYN << "int: impossible\n";
-	std::cout << BCYN << "int: " << d << std::endl;
+	else
+		std::cout << BCYN << "int: " << static_cast<int>(d) << std::endl;
 	return ;
 }
 
 void	ScalarConverter::convertDouble(double d)
 {
-	std::cout << BCYN << "double: " << std::fixed << std::setprecision(1) << d << std::endl;
+	std::cout << BCYN << "double: " << std::fixed << std::setprecision(1) << d << 'f' << std::endl;
 	return ;
 }
 
