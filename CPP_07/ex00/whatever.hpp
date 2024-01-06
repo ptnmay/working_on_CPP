@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 06:48:25 by psaeyang          #+#    #+#             */
-/*   Updated: 2024/01/05 06:49:30 by psaeyang         ###   ########.fr       */
+/*   Updated: 2024/01/06 23:27:31 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,20 @@
 # define BWHT "\e[1;37m"
 # define RESET "\e[0m"
 
+#include <iostream>
 
+template <typename T> void swap(T& a, T& b) {
+    T temp = a;
+    a = b;
+    b = temp;
+}
+
+template <typename T> T min(const T& a, const T& b) {
+    return (b < a ? b : a);
+}
+
+template <typename T> T max(const T& a, const T& b) {
+    return (a < b ? b : a);
+}
 
 #endif
