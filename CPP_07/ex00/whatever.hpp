@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 06:48:25 by psaeyang          #+#    #+#             */
-/*   Updated: 2024/01/06 23:27:31 by psaeyang         ###   ########.fr       */
+/*   Updated: 2024/01/06 23:36:51 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,6 @@
 # define BCYN "\e[1;36m"
 # define BWHT "\e[1;37m"
 # define RESET "\e[0m"
-
-#include <iostream>
 
 template <typename T> void swap(T& a, T& b) {
     T temp = a;
