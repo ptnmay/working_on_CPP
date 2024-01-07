@@ -6,7 +6,7 @@
 #    By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/07 06:38:27 by psaeyang          #+#    #+#              #
-#    Updated: 2024/01/07 06:38:29 by psaeyang         ###   ########.fr        #
+#    Updated: 2024/01/07 23:26:44 by psaeyang         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ COMPILE = echo "$(BCYN)$(NAME) compiled....$(RES)"
 CLEAN = echo "$(BYEL)$(NAME) clean....$(RES)"
 FCLEAN = echo "$(BRED)$(NAME) fclean....$(RES)"
 
-NAME = iter
+NAME = array
 
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98 #-g -fsanitize=address
