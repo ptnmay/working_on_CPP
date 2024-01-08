@@ -6,13 +6,14 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 23:35:58 by psaeyang          #+#    #+#             */
-/*   Updated: 2024/01/07 06:37:24 by psaeyang         ###   ########.fr       */
+/*   Updated: 2024/01/08 16:44:46 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "iter.hpp"
 
-int main() {
+int main()
+{
 	int tab[] = { 0, 1, 2, 3, 4 };
 	const char ch[] = { 'a', 'b', 'c', 'd', 'e' };
 
@@ -21,3 +22,4 @@ int main() {
 	iter( ch, 5, print<const char> );
 	return 0;
 }
+
