@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 02:09:10 by psaeyang          #+#    #+#             */
-/*   Updated: 2024/01/11 19:56:57 by psaeyang         ###   ########.fr       */
+/*   Updated: 2024/01/12 05:33:45 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ class Span
 
 		void			checkError(int add) const;
 		void			addNumber(int add);
+		void			print();
 		unsigned int	shortestSpan();
 		unsigned int	longestSpan();
 
