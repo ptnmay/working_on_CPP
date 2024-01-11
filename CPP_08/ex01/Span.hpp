@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 02:09:10 by psaeyang          #+#    #+#             */
-/*   Updated: 2024/01/11 15:23:50 by psaeyang         ###   ########.fr       */
+/*   Updated: 2024/01/11 19:56:57 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,30 +43,36 @@ class Span
 		Span(Span const& other);
 		Span& operator=(Span const& cpy);
 
-		void	checkError() const;
+		void			checkError(int add) const;
 		void			addNumber(int add);
 		unsigned int	shortestSpan();
 		unsigned int	longestSpan();
 
-	class StoreageFull : public std::exception
+	class StoreageFullException : public std::exception
 	{
 		public:
 			virtual const char* what() const throw()
+			{
 				return ("Storage is FULL");
+			}
 	};
 	
-	class SameNum : public std::exception
+	class SameNumException : public std::exception
 	{
 		public:
 			virtual const char* what() const throw()
+			{
 				return ("Can't add same Number");
+			}
 	};
 	
-	class CannotSpan : public std::exception
+	class CannotSpanException : public std::exception
 	{
 		public:
 			virtual const char* what() const throw()
+			{
 				return ("Can't Span Number");
+			}
 	};
 
 	

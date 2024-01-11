@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 02:09:08 by psaeyang          #+#    #+#             */
-/*   Updated: 2024/01/11 15:23:05 by psaeyang         ###   ########.fr       */
+/*   Updated: 2024/01/11 19:52:16 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,21 +33,21 @@ Span& Span::operator=(Span const& cpy)
 	return *this;
 }
 
-void	Span::checkError() const
+void	Span::checkError(int add) const
 {
 	for (unsigned int i = 0; i + 1 < _vec.size(); i++)
 	{
-		if (_vec[i] != _vec[i + 1])
-			throw Span::CannotSpan();
+		if (std::find(_vec.begin(), _vec.end(), add) != _vec.end())
+			throw Span::SameNumException();
 	}
-	if (_vec.empty() || _vec.size() == 1)
-		throw Span::CannotSpan();
+	// if (_vec.empty() || _vec.size() == 1)
+	// 	throw Span::CannotSpanException();
 }
 
 void	Span::addNumber(int add)
 {
-	checkError();
+	checkError(add);
 	if (_vec.size() >= _size)
-		throw Span::StoreageFull();
+		throw Span::StoreageFullException();
 	_vec.push_back(add);
 }
