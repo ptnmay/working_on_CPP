@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 23:08:49 by psaeyang          #+#    #+#             */
-/*   Updated: 2024/01/13 02:39:37 by psaeyang         ###   ########.fr       */
+/*   Updated: 2024/01/13 05:25:14 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,20 +31,14 @@ template<class T>
 class MutantStack : public std::stack<T>
 {
 	public:
-			MutantStack() : std::stack<T>() {}
-			MutantStack(MutantStack const& other) {
-				*this = other;
-			}
 			~MutantStack() {}
-
 			MutantStack() {}
-			
-			MutantStack& operator=(MutantStack cont& cpy) {
+			MutantStack(MutantStack const& other) {*this = other;}
+			MutantStack& operator=(MutantStack const& cpy) {
 				if (this != &cpy) {
 					std::stack<T>::operator=(cpy);
 				}
-				return *this;
-			}
+				return *this;}
 
 			typedef typename std::stack<T>::container_type::iterator iter;
 
