@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 02:09:08 by psaeyang          #+#    #+#             */
-/*   Updated: 2024/01/12 05:45:04 by psaeyang         ###   ########.fr       */
+/*   Updated: 2024/01/12 22:53:50 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,15 @@ void	Span::addNumber(int add)
 	if (_vec.size() >= _size)
 		throw Span::StoreageFullException();
 	_vec.push_back(add);
+}
+
+void	Span::addNum(std::vector<int>::const_iterator begin, std::vector<int>::const_iterator end)
+{
+    unsigned int size = _vec.size();
+    if (size == _size || _size - size < std::distance(begin, end))
+        throw std::out_of_range ("Array is full, Can't add anymore.");
+    _vec.insert(_vec.end(), begin, end);
+	
 }
 
 unsigned int Span::shortestSpan()
