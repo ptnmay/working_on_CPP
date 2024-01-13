@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 02:09:14 by psaeyang          #+#    #+#             */
-/*   Updated: 2024/01/12 23:05:25 by psaeyang         ###   ########.fr       */
+/*   Updated: 2024/01/13 20:35:49 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,46 +94,21 @@ void test_error()
 	}
 }
 
-void test_addnum()
-{
-	int	arr[20] = { 6,23,6345,87,22,1,3,4 };
-	
-	Span	sp(20);
-
-	std::vector<int> vec;
-
-	try
-	{
-        sp.print();
-		sp.addNum(vec.begin(), vec.end());
-		std::cout << sp.shortestSpan() << std::endl;
-		std::cout << sp.longestSpan() << std::endl;
-	} catch (std::exception &e) {
-		std::cerr << BRED << e.what() << '\n' << RESET;
-	}
-}
-
 void test1()
 {
-    std::cout << BMAG << "\n---- TEST 1 ----" << RESET << std::endl;
-	std::cout << BYEL << "case : random and addRange" << RESET << std::endl;
     try
     {
         std::srand(std::time(0));
         unsigned int max = 30;
-        int size = 15; // for add more by range
+        int size = 15;
         Span arr(max);
-        for (unsigned int i = 0; i < max - size; i++)
-            arr.addNumber(rand() % 1000);
-        arr.print();
-        
         std::vector<int> newArr(size);
         for (int i = 0; i < size; i++)
             newArr[i] = rand() % 1000;
         arr.addNum(newArr.begin(), newArr.end());
         arr.print();
-        std::cout << "Longest Span  : "<< arr.longestSpan() << std::endl;
-        std::cout << "Shortest Span : "<< arr.shortestSpan() << std::endl;
+        std::cout << BMAG << "Longest Span  : "<< arr.longestSpan() << std::endl;
+        std::cout << BCYN << "Shortest Span : "<< arr.shortestSpan() << std::endl;
     }
     catch(const std::exception& e)
     {
@@ -143,13 +118,12 @@ void test1()
 
 int main()
 {
-	test_random();
-	std::cout << "======================\n";
 	test_subject();
+	std::cout << "======================\n";
+	test_random();
 	std::cout << "======================\n";
 	test_error();
 	std::cout << "======================\n";
-	// test_addnum();
 	test1();
 	return 0;
 }
