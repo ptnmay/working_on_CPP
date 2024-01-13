@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 02:09:08 by psaeyang          #+#    #+#             */
-/*   Updated: 2024/01/12 22:53:50 by psaeyang         ###   ########.fr       */
+/*   Updated: 2024/01/13 22:11:54 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,13 +50,29 @@ void	Span::addNumber(int add)
 	_vec.push_back(add);
 }
 
-void	Span::addNum(std::vector<int>::const_iterator begin, std::vector<int>::const_iterator end)
+void	Span::addNum(std::vector<int>::iterator const& begin, std::vector<int>::iterator const& end)
 {
-    unsigned int size = _vec.size();
-    if (size == _size || _size - size < std::distance(begin, end))
-        throw std::out_of_range ("Array is full, Can't add anymore.");
-    _vec.insert(_vec.end(), begin, end);
-	
+	if ((std::distance(begin, end) + _vec.size()) > _size)
+	{
+		throw Span::StoreageFullException();
+	}
+	std::vector<int>::iterator cur = begin;
+	while (cur != end) {
+		try
+		{
+			if (std::find(_vec.begin(), _vec.end(), *cur) == _vec.end()) {
+				_vec.push_back(*cur);
+			}
+			else
+			{
+				throw Span::SameNumException();
+			}
+		} catch (std::exception &e)
+		{
+			std::cout << BRED << "addNum: " << e.what() << RESET << std::endl;
+		}
+		cur++;
+	}
 }
 
 unsigned int Span::shortestSpan()

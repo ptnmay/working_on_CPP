@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 02:09:10 by psaeyang          #+#    #+#             */
-/*   Updated: 2024/01/12 22:54:11 by psaeyang         ###   ########.fr       */
+/*   Updated: 2024/01/13 22:08:06 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ class Span
 
 		void			print();
 		void			checkError(int add) const;
-		void			addNum(std::vector<int>::const_iterator begin, std::vector<int>::const_iterator end);
+		void			addNum(std::vector<int>::iterator const& begin, std::vector<int>::iterator const& end);
 		void			addNumber(int add);
 		unsigned int	shortestSpan();
 		unsigned int	longestSpan();

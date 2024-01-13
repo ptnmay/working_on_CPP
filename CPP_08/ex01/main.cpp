@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 02:09:14 by psaeyang          #+#    #+#             */
-/*   Updated: 2024/01/13 20:35:49 by psaeyang         ###   ########.fr       */
+/*   Updated: 2024/01/13 22:23:58 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void test_random()
 {
+	std::cout << BGRN << "TEST RANDOM NUM\n" << RESET;
     try
     {
         std::srand(std::time(0));
@@ -33,6 +34,7 @@ void test_random()
 
 void test_subject()
 {
+	std::cout << BGRN << "TEST SUBJECT\n" << RESET;
 	try
 	{
 		Span sp = Span(5);
@@ -41,6 +43,7 @@ void test_subject()
 		sp.addNumber(17);
 		sp.addNumber(9);
 		sp.addNumber(11);
+		sp.print();
 		std::cout << BMAG << "Shortest Span: " << sp.shortestSpan() << RESET << std::endl;
 		std::cout << BCYN << "Longest Span: " << sp.longestSpan() << RESET << std::endl;
 	}
@@ -52,6 +55,7 @@ void test_subject()
 
 void test_error()
 {
+	std::cout << BGRN << "TEST ERROR\n" << RESET;
 	try
 	{
 		Span sp = Span(5);
@@ -92,38 +96,52 @@ void test_error()
 	{
 		std::cerr << BRED << e.what() << '\n' << RESET;
 	}
+	try
+	{
+		Span sp = Span(5);
+		std::vector<int> vec;
+		vec.push_back(2);
+		vec.push_back(49);
+		vec.push_back(2);
+		sp.addNum(vec.begin(), vec.end());
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << BRED << e.what() << '\n' << RESET;
+	}
+	
 }
 
-void test1()
+void test_advanceNum()
 {
-    try
-    {
-        std::srand(std::time(0));
-        unsigned int max = 30;
-        int size = 15;
-        Span arr(max);
-        std::vector<int> newArr(size);
-        for (int i = 0; i < size; i++)
-            newArr[i] = rand() % 1000;
-        arr.addNum(newArr.begin(), newArr.end());
-        arr.print();
-        std::cout << BMAG << "Longest Span  : "<< arr.longestSpan() << std::endl;
-        std::cout << BCYN << "Shortest Span : "<< arr.shortestSpan() << std::endl;
-    }
-    catch(const std::exception& e)
-    {
-        std::cerr << BRED << "Exception : " << e.what() << std::endl;
-    }
+	try
+	{
+		std::cout << BGRN << "TEST ADVANCE ADDNUM\n" << RESET;
+		Span sp = Span(5);
+		std::vector<int> vec;
+		vec.push_back(200);
+		vec.push_back(49);
+		vec.push_back(1234);
+		sp.addNum(vec.begin(), vec.end());
+		sp.print();
+		std::cout << BMAG << "Shortest Span: " << sp.shortestSpan() << RESET << std::endl;
+		std::cout << BCYN << "Longest Span: " << sp.longestSpan() << RESET << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << BRED << e.what() << '\n' << RESET;
+	}
+	
 }
 
 int main()
 {
 	test_subject();
-	std::cout << "======================\n";
+	std::cout << "----------------------------\n";
 	test_random();
-	std::cout << "======================\n";
+	std::cout << "----------------------------\n";
+	test_advanceNum();
+	std::cout << "----------------------------\n";
 	test_error();
-	std::cout << "======================\n";
-	test1();
 	return 0;
 }
