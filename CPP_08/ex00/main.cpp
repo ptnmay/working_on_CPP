@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 18:49:21 by psaeyang          #+#    #+#             */
-/*   Updated: 2024/01/11 00:00:44 by psaeyang         ###   ########.fr       */
+/*   Updated: 2024/01/13 22:26:41 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,30 +14,29 @@
 
 int main()
 {
-	int	n[10] = {4, 18, 20, 37, 43, 51, 68, 70, 83, 92};
+	int	n[10] = {2, 14, 60, 17, 43, 1, 68, 70, 83, 9};
 
-	std::cout << BGRN << "All number in array: ";
+	std::cout << BMAG << "All number in array: ";
 	for (int i = 0; i < 10; i++) {
 		std::cout << n[i] << " ";
 	}
-	std::cout << RESET << std::endl << std::endl;
+	std::cout << RESET << std::endl;
 
-	std::cout << " ---------- VECTOR --------- " << std::endl;
 	std::vector<int> vec;
 	for (int i = 0; i < 10; i++) {
 		vec.push_back(n[i]);
 	}
 	try {
-		std::cout << BCYN << "search: " << 43 << std::endl;
+		std::cout << BCYN << "SEARCH: " << 43 << std::endl;
 		easyfind(vec, 43);
-		std::cout << "search: " << 100 << RESET << std::endl;
-		easyfind(vec, 100);
+		std::cout << BGRN << "FOUND IT\n" << RESET;
+		std::cout << BCYN << "SEARCH: " << 99 << std::endl;
+		easyfind(vec, 99);
+		std::cout << BGRN << "FOUND IT\n" << RESET;
 	}
 	catch (std::exception& e) {
 		std::cout << BRED << e.what() << RESET << std::endl;
 	}
-	vec.clear();
-	std::cout << std::endl;
 
 	return 0;
 }

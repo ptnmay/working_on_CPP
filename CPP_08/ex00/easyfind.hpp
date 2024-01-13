@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 18:48:05 by psaeyang          #+#    #+#             */
-/*   Updated: 2024/01/11 00:00:03 by psaeyang         ###   ########.fr       */
+/*   Updated: 2024/01/13 22:27:09 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ class NotFound : public std::exception
 {
 	const char *what() const throw()
 	{
-		return "Not found value that you looking for";
+		return "CANNOT FIND WHAT YOU LOOKING FOR";
 	}
 };
 
