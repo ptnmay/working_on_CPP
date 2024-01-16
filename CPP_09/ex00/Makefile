@@ -6,7 +6,7 @@
 #    By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/14 19:05:18 by psaeyang          #+#    #+#              #
-#    Updated: 2024/01/14 19:05:21 by psaeyang         ###   ########.fr        #
+#    Updated: 2024/01/16 12:39:35 by psaeyang         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,12 +19,12 @@ COMPILE = echo "$(BCYN)$(NAME) compiled....$(RES)"
 CLEAN = echo "$(BYEL)$(NAME) clean....$(RES)"
 FCLEAN = echo "$(BRED)$(NAME) fclean....$(RES)"
 
-NAME = 
+NAME = btc
 
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98 #-g -fsanitize=address
 
-SRC = main.cpp
+SRC = main.cpp BitcoinExchange.cpp
 OBJ = ${SRC:.cpp=.o}
 
 all: $(NAME)
