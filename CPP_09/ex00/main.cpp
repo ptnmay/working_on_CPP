@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 12:38:56 by psaeyang          #+#    #+#             */
-/*   Updated: 2024/01/16 15:04:23 by psaeyang         ###   ########.fr       */
+/*   Updated: 2024/01/23 02:30:42 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ int main(int ac, char **av)
 	try
 	{
 		BitcoinExchange btc;
-
 		btc.checkFile(av[1]);
 	}
 	catch(const std::exception& e)
