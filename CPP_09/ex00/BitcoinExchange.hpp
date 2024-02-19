@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 12:39:25 by psaeyang          #+#    #+#             */
-/*   Updated: 2024/01/25 23:14:10 by psaeyang         ###   ########.fr       */
+/*   Updated: 2024/02/20 00:32:04 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,13 +45,14 @@ class BitcoinExchange
 	public :
 			~BitcoinExchange();
 			BitcoinExchange();
+			BitcoinExchange(std::string const &av);
 			BitcoinExchange(BitcoinExchange const& other);
 			BitcoinExchange& operator=(BitcoinExchange const& cpy);
 			
-			void	start(std::string fileName);
-			bool	checkDate(std::string date);
-			bool	checkValue(std::string value);
-			
+			bool create_data();
+			bool check_data(std::string const &name);
+			bool check_file(std::ifstream &file, std::string const &input);
+						
 	
 	class CannotOpenFile : public std::exception
 	{
@@ -61,12 +62,12 @@ class BitcoinExchange
 				return ("Can't Open File");
 			}
 	};
-	class NotDataCSV : public std::exception
+	class ErrorDatabase : public std::exception
 	{
 		public:
 			virtual const char* what() const throw()
 			{
-				return ("should be data.cvs");
+				return ("Database Error");
 			}
 	};
 	class WrongFormat : public std::exception
