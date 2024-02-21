@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 12:52:32 by psaeyang          #+#    #+#             */
-/*   Updated: 2024/02/20 01:21:10 by psaeyang         ###   ########.fr       */
+/*   Updated: 2024/02/21 16:51:23 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,10 @@ bool check_data(std::string const& name)
 {
 	size_t n;
 	
+	n = name.rfind(".csv");
+	if (n == std::string::npos)
+		return (false);
+	return (true);
 }
 
 BitcoinExchange::BitcoinExchange(BitcoinExchange const& other)
