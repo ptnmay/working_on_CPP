@@ -6,7 +6,7 @@
 /*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 12:39:25 by psaeyang          #+#    #+#             */
-/*   Updated: 2024/02/20 00:32:04 by psaeyang         ###   ########.fr       */
+/*   Updated: 2024/02/27 15:34:22 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,10 +49,10 @@ class BitcoinExchange
 			BitcoinExchange(BitcoinExchange const& other);
 			BitcoinExchange& operator=(BitcoinExchange const& cpy);
 			
-			bool create_data();
-			bool check_data(std::string const &name);
-			bool check_file(std::ifstream &file, std::string const &input);
-						
+			int create_data();
+			int check_data(std::string const &name);
+			int check_file(std::ifstream &file, std::string const &input);
+			void addData(std::string const& line);
 	
 	class CannotOpenFile : public std::exception
 	{
