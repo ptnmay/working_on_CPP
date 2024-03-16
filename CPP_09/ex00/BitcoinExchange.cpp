@@ -32,7 +32,7 @@ void	BitcoinExchange::addData(std::string const& line)
 	float		convert;
 	std::string::size_type	n = line.find(',');
 
-	if (n != line.find(','))
+	if (n != line.rfind(','))
 	{
 		std::cout << "wrong format\n";
 		return ;
@@ -48,10 +48,10 @@ int BitcoinExchange::create_data(void)
 	std::string name = "data.csv";
 	std::ifstream file;
 	if (!check_data(name))
-		return (1);
+		return (-1);
 	file.open(name.c_str(), std::fstream::in);
 	if (!file.is_open())
-		return (1);
+		return (-1);
 	std::string line;
 	std::getline(file, line);
 	while (std::getline(file, line))
@@ -67,8 +67,8 @@ int BitcoinExchange::check_data(std::string const& name)
 	size_t n;
 	
 	n = name.rfind(".csv");
-	if (n == std::string::npos || (name.length() - n != 4))
-		return (1);
+	if (n == std::string::npos)
+		return (-1);
 	return (0);
 }
 
