@@ -43,12 +43,12 @@ void	BitcoinExchange::addData(std::string const& line)
 	_database.insert(std::pair<std::string, float>(date, convert));
 }
 
-int BitcoinExchange::create_data(void)
+bool BitcoinExchange::create_data(void)
 {
 	std::string name = "data.csv";
 	std::ifstream file;
 	if (!check_data(name))
-		return (-1);
+		return (false);
 	file.open(name.c_str(), std::fstream::in);
 	if (!file.is_open())
 		return (-1);
@@ -59,10 +59,10 @@ int BitcoinExchange::create_data(void)
 		addData(line);
 	}
 	file.close();
-	return (0);
+	return (true);
 }
 
-int BitcoinExchange::check_data(std::string const& name)
+bool BitcoinExchange::check_data(std::string const& name)
 {
 	size_t n;
 	

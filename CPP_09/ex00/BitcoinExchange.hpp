@@ -49,9 +49,9 @@ class BitcoinExchange
 			BitcoinExchange(BitcoinExchange const& other);
 			BitcoinExchange& operator=(BitcoinExchange const& cpy);
 			
-			int create_data();
-			int check_data(std::string const &name);
-			int check_file(std::ifstream &file, std::string const &input);
+			bool create_data();
+			bool check_data(std::string const &name);
+			bool check_file(std::ifstream &file, std::string const &input);
 			void addData(std::string const& line);
 	
 	class CannotOpenFile : public std::exception
