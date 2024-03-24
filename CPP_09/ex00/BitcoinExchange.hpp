@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   BitcoinExchange.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: scharuka <scharuka@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 12:39:25 by psaeyang          #+#    #+#             */
-/*   Updated: 2024/02/27 15:34:22 by psaeyang         ###   ########.fr       */
+/*   Updated: 2024/03/25 03:26:25 by scharuka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,11 @@
 # define BITCOINEXCHANGE_HPP
 
 # include <iostream>
-# include <string>
-# include <cstdlib>
-# include <exception>
 # include <fstream>
 # include <map>
-# include <utility>
-# include <ctime>
-# include <fstream>
-# include <sstream>
+# include <exception>
+# include <cstdlib>
 # include <iomanip>
-# include <stdlib.h>
 
 # define BBLK "\e[1;30m"
 # define BRED "\e[1;31m"
@@ -41,19 +35,24 @@ class BitcoinExchange
 {
 	private:
 			std::map<std::string, float>		_database;
-			
+
 	public :
 			~BitcoinExchange();
 			BitcoinExchange();
 			BitcoinExchange(std::string const &av);
 			BitcoinExchange(BitcoinExchange const& other);
 			BitcoinExchange& operator=(BitcoinExchange const& cpy);
-			
+
 			bool create_data();
 			bool check_data(std::string const &name);
 			bool check_file(std::ifstream &file, std::string const &input);
 			void addData(std::string const& line);
-	
+			void	read_input(std::ifstream &file);
+			void	read_line(std::string const &line);
+			void	calculate(time_t timedate, float &amount, std::string date);
+
+			bool	bad_input();
+			time_t	convert_date(std::string const &date);
 	class CannotOpenFile : public std::exception
 	{
 		public:
