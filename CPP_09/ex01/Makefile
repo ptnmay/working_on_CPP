@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: psaeyang <psaeyang@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/14 19:05:31 by psaeyang          #+#    #+#              #
-#    Updated: 2024/01/14 19:09:57 by psaeyang         ###   ########.fr        #
+#    Updated: 2024/03/25 22:43:48 by psaeyang         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,10 +21,11 @@ FCLEAN = echo "$(BRED)$(NAME) fclean....$(RES)"
 
 NAME = 
 
+
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98 #-g -fsanitize=address
 
-SRC = main.cpp
+SRC = main.cpp RNP.cpp
 OBJ = ${SRC:.cpp=.o}
 
 all: $(NAME)
