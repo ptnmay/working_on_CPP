@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   BitcoinExchange.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: scharuka <scharuka@42.fr>                  +#+  +:+       +#+        */
+/*   By: psaeyang <psaeyang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 12:39:25 by psaeyang          #+#    #+#             */
-/*   Updated: 2024/03/25 03:26:25 by scharuka         ###   ########.fr       */
+/*   Updated: 2024/03/25 22:25:51 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,22 +43,25 @@ class BitcoinExchange
 			BitcoinExchange(BitcoinExchange const& other);
 			BitcoinExchange& operator=(BitcoinExchange const& cpy);
 
-			bool create_data();
-			bool check_data(std::string const &name);
-			bool check_file(std::ifstream &file, std::string const &input);
-			void addData(std::string const& line);
+			bool 	create_data();
+			bool 	check_data(std::string const &name);
+			bool 	check_file(std::ifstream &file, std::string const &input);
+			void 	addData(std::string const& line);
 			void	read_input(std::ifstream &file);
 			void	read_line(std::string const &line);
 			void	calculate(time_t timedate, float &amount, std::string date);
 
-			bool	bad_input();
+			bool	bad_input(std::string const &line);
 			time_t	convert_date(std::string const &date);
+			int is_digit(char s);
+
+
 	class CannotOpenFile : public std::exception
 	{
 		public:
 			virtual const char* what() const throw()
 			{
-				return ("Can't Open File");
+				return (BRED"Can't Open File");
 			}
 	};
 	class ErrorDatabase : public std::exception
@@ -66,7 +69,7 @@ class BitcoinExchange
 		public:
 			virtual const char* what() const throw()
 			{
-				return ("Database Error");
+				return (BRED"Database Error");
 			}
 	};
 	class WrongFormat : public std::exception
@@ -74,7 +77,7 @@ class BitcoinExchange
 		public:
 			virtual const char* what() const throw()
 			{
-				return ("Wrong Format");
+				return (BRED"Wrong Format");
 			}
 	};
 };

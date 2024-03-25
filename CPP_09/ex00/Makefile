@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: psaeyang <psaeyang@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/14 19:05:18 by psaeyang          #+#    #+#              #
-#    Updated: 2024/01/16 12:39:35 by psaeyang         ###   ########.fr        #
+#    Updated: 2024/03/25 22:24:54 by psaeyang         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,8 @@ RES = \033[0m
 COMPILE = echo "$(BCYN)$(NAME) compiled....$(RES)"
 CLEAN = echo "$(BYEL)$(NAME) clean....$(RES)"
 FCLEAN = echo "$(BRED)$(NAME) fclean....$(RES)"
+
+
 
 NAME = btc
 

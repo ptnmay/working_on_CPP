@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   BitcoinExchange.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: scharuka <scharuka@42.fr>                  +#+  +:+       +#+        */
+/*   By: psaeyang <psaeyang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 12:52:32 by psaeyang          #+#    #+#             */
-/*   Updated: 2024/03/25 03:36:47 by scharuka         ###   ########.fr       */
+/*   Updated: 2024/03/25 22:42:17 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,7 @@
 
 BitcoinExchange::~BitcoinExchange() {}
 
-BitcoinExchange::BitcoinExchange()
-{}
+BitcoinExchange::BitcoinExchange() {}
 
 BitcoinExchange::BitcoinExchange(std::string const &av)
 {
@@ -23,10 +22,12 @@ BitcoinExchange::BitcoinExchange(std::string const &av)
 
 	if (!create_data())
 		throw ErrorDatabase();
-	std::cout << "after create data\n";
+	if (!check_file(input, av))
+		throw CannotOpenFile();
+	read_input(input);
 }
 
-time_t	convert_date(std::string const &date)
+time_t	BitcoinExchange::convert_date(std::string const &date)
 {
 	std::string		sub[3];
 
@@ -34,7 +35,7 @@ time_t	convert_date(std::string const &date)
 	sub[1] = date.substr(5, 2);
 	sub[2] = date.substr(8, 2);
 
-	tm	d = {};
+	tm d = {};
 
 	d.tm_year = std::atoi(sub[0].c_str());
 	d.tm_mon = std::atoi(sub[1].c_str());
@@ -44,16 +45,71 @@ time_t	convert_date(std::string const &date)
 	return (t);
 }
 
-void	calculate(time_t timedate, float &amount, std::string date_str)
+void	BitcoinExchange::calculate(time_t timedate, float &amount, std::string date_str)
 {
 	std::map<std::string, float>::iterator begin = _database.begin();
 	std::map<std::string, float>::iterator end = _database.end();
 	std::map<std::string, float>::iterator it;
 
-
+	time_t	data_date;
+	while (begin != end)
+	{
+		data_date = convert_date(begin->first);
+		if (data_date == timedate)
+		{
+			std::cout << begin->first << " => " << amount << " => " << amount * begin->second << "\n";
+			break ;
+		}
+		else if (data_date > timedate)
+		{
+			it = _database.lower_bound(date_str);
+			if (it == _database.end())
+				it--;
+			std::cout << date_str << " => " << amount << " => " << amount * it->second << "\n";
+			break ;
+		}
+		begin++;
+	}
 }
 
-void	read_line(std::string const& line)
+int BitcoinExchange::is_digit(char s)
+{
+	if (s < '0' || s > '9')
+		return (0);
+	return (1);
+}
+
+bool	BitcoinExchange::bad_input(std::string const &line)
+{
+	std::size_t	pipe = line.find('|');
+	std::string	date;
+	size_t		i = 0;
+	time_t		valid_date;
+
+	if (pipe == std::string::npos || pipe != line.rfind('|'))
+		return false;
+	date = line.substr(0, pipe- 1);
+	if (date.length() != 10)
+		return false;
+	while (i < date.length())
+	{
+		if (i == 4 || i == 7)
+		{
+			if (date[i] != '-')
+				return false;
+		}
+		else if (!is_digit(date[i]))
+			return false;
+		i++;
+	}
+	date = line.substr(0, pipe - 1);
+	valid_date = convert_date(date);
+	if (valid_date == -1)
+		return false;
+	return true;
+}
+
+void	BitcoinExchange::read_line(std::string const& line)
 {
 	std::size_t	pipe = line.find('|');
 	float	amount;
@@ -75,7 +131,7 @@ void	read_line(std::string const& line)
 	}
 	if (amount > 1000)
 	{
-		std::cout << "Error: too high\n";
+		std::cout << "Error: number too high\n";
 		return ;
 	}
 	date = line.substr(0, pipe -1);
@@ -83,7 +139,7 @@ void	read_line(std::string const& line)
 	calculate(valid_date, amount, date);
 }
 
-void	read_input(std::ifstream &file)
+void	BitcoinExchange::read_input(std::ifstream &file)
 {
 	std::string	line;
 
@@ -92,7 +148,7 @@ void	read_input(std::ifstream &file)
 		read_line(line);
 }
 
-bool	check_file(std::ifstream &file, std::string const &input)
+bool	BitcoinExchange::check_file(std::ifstream &file, std::string const &input)
 {
 	file.open(input.c_str(), std::fstream::in);
 	if (!file.is_open())
@@ -142,8 +198,8 @@ bool BitcoinExchange::check_data(std::string const& name)
 
 	n = name.rfind(".csv");
 	if (n == std::string::npos)
-		return (-1);
-	return (0);
+		return (false);
+	return (true);
 }
 
 BitcoinExchange::BitcoinExchange(BitcoinExchange const& other)
