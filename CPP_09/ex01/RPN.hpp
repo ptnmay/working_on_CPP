@@ -6,7 +6,7 @@
 /*   By: psaeyang <psaeyang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 22:44:44 by psaeyang          #+#    #+#             */
-/*   Updated: 2024/03/27 19:12:26 by psaeyang         ###   ########.fr       */
+/*   Updated: 2024/03/27 20:25:48 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,14 @@ class RPN
 			RPN(RPN const& other);
 			RPN& operator=(RPN const &cp);
 
-
+			void	run(std::string input);
+			void	calculate(std::string input);
+	class ErrorInput : public std::exception
+	{
+		public:
+			virtual const char* what() const throw()
+				return (BRED"Error: incorrect input");
+	};
 };
 
 
