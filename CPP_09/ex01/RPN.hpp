@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RNP.hpp                                            :+:      :+:    :+:   */
+/*   RPN.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psaeyang <psaeyang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 22:44:44 by psaeyang          #+#    #+#             */
-/*   Updated: 2024/03/25 22:50:20 by psaeyang         ###   ########.fr       */
+/*   Updated: 2024/03/27 19:12:26 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef RNP_HPP
-# define RNP_HPP
+#ifndef RPN_HPP
+# define RPN_HPP
 
 # include <iostream>
 # include <stack>
@@ -30,12 +30,16 @@
 # define RESET "\e[0m"
 
 
-class RNP
+class RPN
 {
+	private:
+			std::stack<int> _stack;
 	public :
-			~RNP();
-			RNP();
-			RNP(RNP const& other);
+			~RPN();
+			RPN();
+			RPN(RPN const& other);
+			RPN& operator=(RPN const &cp);
+
 
 };
 

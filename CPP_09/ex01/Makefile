@@ -6,7 +6,7 @@
 #    By: psaeyang <psaeyang@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/14 19:05:31 by psaeyang          #+#    #+#              #
-#    Updated: 2024/03/25 22:43:48 by psaeyang         ###   ########.fr        #
+#    Updated: 2024/03/27 18:54:41 by psaeyang         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ NAME =
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98 #-g -fsanitize=address
 
-SRC = main.cpp RNP.cpp
+SRC = main.cpp RPN.cpp
 OBJ = ${SRC:.cpp=.o}
 
 all: $(NAME)
