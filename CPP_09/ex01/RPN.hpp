@@ -6,7 +6,7 @@
 /*   By: psaeyang <psaeyang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 22:44:44 by psaeyang          #+#    #+#             */
-/*   Updated: 2024/03/27 20:25:48 by psaeyang         ###   ########.fr       */
+/*   Updated: 2024/03/28 04:26:27 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,9 @@ class RPN
 	{
 		public:
 			virtual const char* what() const throw()
+			{
 				return (BRED"Error: incorrect input");
+			}
 	};
 };
 

@@ -6,7 +6,7 @@
 #    By: psaeyang <psaeyang@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/14 19:05:31 by psaeyang          #+#    #+#              #
-#    Updated: 2024/03/27 18:54:41 by psaeyang         ###   ########.fr        #
+#    Updated: 2024/03/28 04:24:16 by psaeyang         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ COMPILE = echo "$(BCYN)$(NAME) compiled....$(RES)"
 CLEAN = echo "$(BYEL)$(NAME) clean....$(RES)"
 FCLEAN = echo "$(BRED)$(NAME) fclean....$(RES)"
 
-NAME = 
+NAME = RPN
 
 
 CC = c++

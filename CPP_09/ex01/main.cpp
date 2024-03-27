@@ -6,11 +6,11 @@
 /*   By: psaeyang <psaeyang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 00:02:21 by psaeyang          #+#    #+#             */
-/*   Updated: 2024/03/27 17:56:42 by psaeyang         ###   ########.fr       */
+/*   Updated: 2024/03/28 04:25:42 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "RNP.hpp"
+#include "RPN.hpp"
 
 int main(int ac, char **av)
 {
@@ -26,8 +26,12 @@ int main(int ac, char **av)
         return 1;
     }
     try
-        r.run(av[1]);
+    {
+        R.run(av[1]);
+    }
     catch(const std::exception& e)
+    {
         std::cerr << e.what() << "\n";
+    }
     return 0;
 }
