@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: psaeyang <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: psaeyang <psaeyang@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/14 19:09:51 by psaeyang          #+#    #+#              #
-#    Updated: 2024/01/14 19:09:54 by psaeyang         ###   ########.fr        #
+#    Updated: 2024/03/28 04:41:29 by psaeyang         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,12 +19,12 @@ COMPILE = echo "$(BCYN)$(NAME) compiled....$(RES)"
 CLEAN = echo "$(BYEL)$(NAME) clean....$(RES)"
 FCLEAN = echo "$(BRED)$(NAME) fclean....$(RES)"
 
-NAME = 
+NAME = PmergeMe
 
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98 #-g -fsanitize=address
 
-SRC = main.cpp
+SRC = main.cpp PmergeMe.cpp
 OBJ = ${SRC:.cpp=.o}
 
 all: $(NAME)
