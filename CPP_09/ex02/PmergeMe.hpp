@@ -6,7 +6,7 @@
 /*   By: psaeyang <psaeyang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 04:41:47 by psaeyang          #+#    #+#             */
-/*   Updated: 2024/03/28 04:46:31 by psaeyang         ###   ########.fr       */
+/*   Updated: 2024/04/01 22:29:17 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,19 @@
 class PmergeMe
 {
 	private:
-			std::stack<int> _stack;
+			std::list<int>	_list;
+			std::vector<int>	_vector;
+			std::list<int>	_rslist;
+			std::vector<int>	_rsvec;
+			int			_size;
+			double		_timelist;
+			double		_timevec;
 	public :
 			~PmergeMe();
 			PmergeMe();
 			PmergeMe(PmergeMe const& other);
 			PmergeMe& operator=(PmergeMe const &cp);
+			void	run(int)
 
 	class Negnum : public std::exception
 	{
