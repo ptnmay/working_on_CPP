@@ -6,7 +6,7 @@
 /*   By: psaeyang <psaeyang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 04:41:47 by psaeyang          #+#    #+#             */
-/*   Updated: 2024/04/01 22:29:17 by psaeyang         ###   ########.fr       */
+/*   Updated: 2024/04/03 04:16:44 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,14 @@
 # define PMERGEME_HPP
 
 # include <iostream>
-# include <stack>
-# include <sstream>
 # include <exception>
+# include <vector>
 # include <cstdlib>
+# include <list>
+# include <ctime>
+# include <iterator>
+# include <algorithm>
+# include <iomanip>
 
 # define BBLK "\e[1;30m"
 # define BRED "\e[1;31m"
@@ -45,7 +49,16 @@ class PmergeMe
 			PmergeMe();
 			PmergeMe(PmergeMe const& other);
 			PmergeMe& operator=(PmergeMe const &cp);
-			void	run(int)
+			void	run(int ac, char **av);
+			void	addList(int ac, char **av);
+			void	printList(const std::list<int> &list);
+			void	sortList();
+			void	mergeList();
+			int		countList(int size);
+			void	moveList(std::list<int>::iterator &it, int pos);
+			void	insertList();
+			int		minList(const std::list<int> &list);
+			void	deleteList(std::list<int> &list, int value);
 
 	class Negnum : public std::exception
 	{

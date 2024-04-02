@@ -6,7 +6,7 @@
 /*   By: psaeyang <psaeyang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 04:41:54 by psaeyang          #+#    #+#             */
-/*   Updated: 2024/04/01 22:26:02 by psaeyang         ###   ########.fr       */
+/*   Updated: 2024/04/03 04:20:51 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,10 @@ bool    allNum(int ac, char **av)
 {
     for (int i = 1; i < ac; i++)
     {
-        for (size_t j = 0; j < av[i].length(); j++)
+        std::string argv = av[i];
+        for (size_t j = 0; j < argv.length(); j++)
         {
-            if (!isdigit(av[i]))
+            if (!isdigit(argv[j]))
                 return false;
         }
     }
