@@ -6,7 +6,7 @@
 /*   By: psaeyang <psaeyang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 04:41:47 by psaeyang          #+#    #+#             */
-/*   Updated: 2024/04/03 04:16:44 by psaeyang         ###   ########.fr       */
+/*   Updated: 2024/04/03 04:58:45 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,9 +49,10 @@ class PmergeMe
 			PmergeMe();
 			PmergeMe(PmergeMe const& other);
 			PmergeMe& operator=(PmergeMe const &cp);
+			void	printList(const std::list<int> &list);
+			void	printTime();
 			void	run(int ac, char **av);
 			void	addList(int ac, char **av);
-			void	printList(const std::list<int> &list);
 			void	sortList();
 			void	mergeList();
 			int		countList(int size);

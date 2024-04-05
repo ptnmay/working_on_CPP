@@ -6,11 +6,81 @@
 /*   By: psaeyang <psaeyang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 04:41:36 by psaeyang          #+#    #+#             */
-/*   Updated: 2024/04/03 04:20:21 by psaeyang         ###   ########.fr       */
+/*   Updated: 2024/04/05 17:42:39 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PmergeMe.hpp"
+
+void    PmergeMe::insertVec()
+{
+    int min = 0;
+
+    while (!this->_vector.empty())
+    {
+        min = this->minVec(this->_vector);
+        this->result_vector.push_back(min);
+        this->deleteVec(this->_vector, min);
+    }
+}
+
+void    PmergeMe::moveVec(std::vector<int>::iterator &it, int pos)
+{
+    for (int i = 0; i < pos; i++)
+        it++;
+}
+
+int PmergeMe::countVec(int size)
+{
+    int res = 0;
+    int len = size / 2;
+
+    while (len >= 2)
+    {
+        res++;
+        len /= 2;
+    }
+    return (res);
+}
+
+void    PmergeMe::mergeVec()
+{
+    std::vector<int>::iterator  left;
+    std::vector<int>::iterator  right;
+    std::vector<int>::iterator  templ;
+    std::vector<int>::iterator  tempr
+    int size = countVec(this->_vector.size());
+    left = right = templ = tempr = this->_vector.begin();
+    this->moveVec(templ, 1);
+    this->moveVec(right, this->_vector.size() / 2);
+    this->moveVec(tempr, this->_vector.size() / 2 + 1);
+    for (int i = 0; i < size; i++)
+    {
+        if (*left > *templ || *right > *tempr)
+        {
+            if (*left > *templ)
+                iter_swap(left, templ);
+            if (*right > *tempr)
+                iter_swap(right, tempr);
+            this->moveVec(left, 2);
+            this->moveVec(templ, 2);
+            this->moveVec(right, 2);
+            this->moveVec(tempr, 2);
+        }
+    }
+}
+
+
+void    PmergeMe::sortVec()
+{
+    clock_t start = clock();
+    this->mergeVec();
+    this->insertVec();
+    clock_t finish = clock();
+    this->_timevec = double(finish - start);
+}
+
+//list
 
 void    PmergeMe::deleteList(std::list<int> &list, int value)
 {
@@ -115,6 +185,12 @@ void    PmergeMe::printList(const std::list<int> &list)
     std::cout << std::endl;
 }
 
+void    PmergeMe::printTime()
+{
+	std::cout << "Time to process a range of " << _size << " elements with std::list: " << std::fixed << this->_timelist << " us" << std::endl;
+	std::cout << "Time to process a range of " << _size << " elements with std::vector: " << std::fixed << this->_timevec << " us" << std::endl;
+}
+
 void    PmergeMe::addList(int ac, char **av)
 {
     for (int i = 0; i < ac; i++)
@@ -133,10 +209,10 @@ void    PmergeMe::run(int ac, char **av)
     std::cout << "Before sort: ";
     printList(_list);
     this->sortList();
-    // this->sortVec();
+    this->sortVec();
     std::cout << "After sort: ";
     printList(_rslist);
-    // this->printTime();
+    this->printTime();
 }
 
 PmergeMe::PmergeMe() {}
@@ -152,7 +228,8 @@ PmergeMe& PmergeMe::operator=(PmergeMe const &cp)
 {
     if (this != &cp)
     {
-        
+        _list = cp._list;
+        _vector = cp._vector;
     }
     return (*this);
 }
