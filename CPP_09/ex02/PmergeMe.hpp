@@ -6,7 +6,7 @@
 /*   By: psaeyang <psaeyang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 04:41:47 by psaeyang          #+#    #+#             */
-/*   Updated: 2024/04/03 04:58:45 by psaeyang         ###   ########.fr       */
+/*   Updated: 2024/04/06 02:31:14 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,13 +53,20 @@ class PmergeMe
 			void	printTime();
 			void	run(int ac, char **av);
 			void	addList(int ac, char **av);
-			void	sortList();
-			void	mergeList();
-			int		countList(int size);
+			// void	sortList();
+			// void	mergeList();
+			void	sort(std::string type);
+			void	merge(std::string type);
+			// int		countList(int size);
+			int		count(int size);
 			void	moveList(std::list<int>::iterator &it, int pos);
-			void	insertList();
+			void	moveVec(std::vector<int>::iterator &it, int pos);
+			// void	insertList();
+			void	insert(std::string type);
 			int		minList(const std::list<int> &list);
+			int		minVec(const std::vector<int> &vec);
 			void	deleteList(std::list<int> &list, int value);
+			void	deleteVec(std::vector<int> &vec, int value);
 
 	class Negnum : public std::exception
 	{

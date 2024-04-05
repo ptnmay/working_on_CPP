@@ -6,23 +6,11 @@
 /*   By: psaeyang <psaeyang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 04:41:36 by psaeyang          #+#    #+#             */
-/*   Updated: 2024/04/05 17:42:39 by psaeyang         ###   ########.fr       */
+/*   Updated: 2024/04/06 02:46:52 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PmergeMe.hpp"
-
-void    PmergeMe::insertVec()
-{
-    int min = 0;
-
-    while (!this->_vector.empty())
-    {
-        min = this->minVec(this->_vector);
-        this->result_vector.push_back(min);
-        this->deleteVec(this->_vector, min);
-    }
-}
 
 void    PmergeMe::moveVec(std::vector<int>::iterator &it, int pos)
 {
@@ -30,57 +18,20 @@ void    PmergeMe::moveVec(std::vector<int>::iterator &it, int pos)
         it++;
 }
 
-int PmergeMe::countVec(int size)
-{
-    int res = 0;
-    int len = size / 2;
 
-    while (len >= 2)
-    {
-        res++;
-        len /= 2;
-    }
-    return (res);
-}
-
-void    PmergeMe::mergeVec()
+void    PmergeMe::deleteVec(std::vector<int> &vec, int value)
 {
-    std::vector<int>::iterator  left;
-    std::vector<int>::iterator  right;
-    std::vector<int>::iterator  templ;
-    std::vector<int>::iterator  tempr
-    int size = countVec(this->_vector.size());
-    left = right = templ = tempr = this->_vector.begin();
-    this->moveVec(templ, 1);
-    this->moveVec(right, this->_vector.size() / 2);
-    this->moveVec(tempr, this->_vector.size() / 2 + 1);
-    for (int i = 0; i < size; i++)
+    std::vector<int>::iterator it = vec.begin();
+    while (it != vec.end())
     {
-        if (*left > *templ || *right > *tempr)
+        if (*it == value)
         {
-            if (*left > *templ)
-                iter_swap(left, templ);
-            if (*right > *tempr)
-                iter_swap(right, tempr);
-            this->moveVec(left, 2);
-            this->moveVec(templ, 2);
-            this->moveVec(right, 2);
-            this->moveVec(tempr, 2);
+            vec.erase(it);
+            break;
         }
+        it++;
     }
 }
-
-
-void    PmergeMe::sortVec()
-{
-    clock_t start = clock();
-    this->mergeVec();
-    this->insertVec();
-    clock_t finish = clock();
-    this->_timevec = double(finish - start);
-}
-
-//list
 
 void    PmergeMe::deleteList(std::list<int> &list, int value)
 {
@@ -96,6 +47,19 @@ void    PmergeMe::deleteList(std::list<int> &list, int value)
     }
 }
 
+int PmergeMe::minVec(const std::vector<int> &vec)
+{
+    std::vector<int>::const_iterator it = vec.begin();
+    int min = *it;
+    while (it != vec.end())
+    {
+        if (min > *it)
+            min = *it;
+        it++;
+    }
+    return (min);
+}
+
 int PmergeMe::minList(const std::list<int> &list)
 {
     std::list<int>::const_iterator it = list.begin();
@@ -109,14 +73,26 @@ int PmergeMe::minList(const std::list<int> &list)
     return (min);
 }
 
-void    PmergeMe::insertList()
+void    PmergeMe::insert(std::string type)
 {
     int min = 0;
-    while (!this->_list.empty())
+    if (type == "list")
     {
-        min = this->minList(this->_list);
-        this->_rslist.push_back(min);
-        this->deleteList(this->_list, min);
+        while (!this->_list.empty())
+        {
+            min = this->minList(this->_list);
+            this->_rslist.push_back(min);
+            this->deleteList(this->_list, min);
+        }
+    }
+    else if (type == "vec")
+    {
+        while (!this->_vector.empty())
+        {
+            min = this->minVec(this->_vector);
+            this->_rsvec.push_back(min);
+            this->deleteVec(this->_vector, min);
+        }
     }
 }
 
@@ -126,7 +102,7 @@ void    PmergeMe::moveList(std::list<int>::iterator &it, int pos)
         it++;
 }
 
-int PmergeMe::countList(int size)
+int PmergeMe::count(int size)
 {
     int res = 0;
     int len = size / 2;
@@ -139,41 +115,81 @@ int PmergeMe::countList(int size)
     return (res);
 }
 
-void    PmergeMe::mergeList()
+void    PmergeMe::merge(std::string type)
 {
-    std::list<int>::iterator    left;
-    std::list<int>::iterator    right;
-    std::list<int>::iterator    templ;
-    std::list<int>::iterator    tempr;
 
-    int size = countList(this->_list.size());
-    left = right = templ = tempr = this->_list.begin();
-    this->moveList(templ, 1);
-    this->moveList(right, this->_list.size() / 2);
-    this->moveList(tempr, this->_list.size() / 2 + 1);
-    for (int i = 0; i < size; i++)
+    if (type == "list")
     {
-        if (*left > *templ || *right > *tempr)
+        std::list<int>::iterator    left;
+        std::list<int>::iterator    right;
+        std::list<int>::iterator    templ;
+        std::list<int>::iterator    tempr;
+        int size = count(this->_list.size());
+        left = right = templ = tempr = this->_list.begin();
+        this->moveList(templ, 1);
+        this->moveList(right, this->_list.size() / 2);
+        this->moveList(tempr, this->_list.size() / 2 + 1);
+        for (int i = 0; i < size; i++)
         {
-            if (*left > *templ)
-                iter_swap(left, templ);
-            if (*right > *tempr)
-                iter_swap(right, tempr);
-            this->moveList(left, 2);
-            this->moveList(templ, 2);
-            this->moveList(right, 2);
-            this->moveList(tempr, 2);
+            if (*left > *templ || *right > *tempr)
+            {
+                if (*left > *templ)
+                    iter_swap(left, templ);
+                if (*right > *tempr)
+                    iter_swap(right, tempr);
+                this->moveList(left, 2);
+                this->moveList(templ, 2);
+                this->moveList(right, 2);
+                this->moveList(tempr, 2);
+            }
+        }
+    }
+    else if (type == "vec")
+    {
+        std::vector<int>::iterator    left;
+        std::vector<int>::iterator    right;
+        std::vector<int>::iterator    templ;
+        std::vector<int>::iterator    tempr;
+        int size = count(this->_vector.size());
+        left = right = templ = tempr = this->_vector.begin();
+        this->moveVec(templ, 1);
+        this->moveVec(right, this->_list.size() / 2);
+        this->moveVec(tempr, this->_list.size() / 2 + 1);
+        for (int i = 0; i < size; i++)
+        {
+            if (*left > *templ || *right > *tempr)
+            {
+                if (*left > *templ)
+                    iter_swap(left, templ);
+                if (*right > *tempr)
+                    iter_swap(right, tempr);
+                this->moveVec(left, 2);
+                this->moveVec(templ, 2);
+                this->moveVec(right, 2);
+                this->moveVec(tempr, 2);
+            }
         }
     }
 }
 
-void    PmergeMe::sortList()
+void    PmergeMe::sort(std::string type)
 {
-    clock_t start = clock();
-    this->mergeList();
-    this->insertList();
-    clock_t finish = clock();
-    this->_timelist = double(finish - start);
+    if (type == "list")
+    {
+        clock_t start = clock();
+        this->merge("list");
+        this->insert("list");
+        clock_t finish = clock();
+        this->_timelist = double(finish - start);
+    }
+    else if (type == "vec")
+    {
+        clock_t start = clock();
+        this->merge("vec");
+        this->insert("vec");
+        clock_t finish = clock();
+        this->_timevec = double(finish - start);
+    }
 }
 
 void    PmergeMe::printList(const std::list<int> &list)
@@ -208,8 +224,8 @@ void    PmergeMe::run(int ac, char **av)
     addList(ac - 1, av + 1);
     std::cout << "Before sort: ";
     printList(_list);
-    this->sortList();
-    this->sortVec();
+    this->sort("list");
+    this->sort("vec");
     std::cout << "After sort: ";
     printList(_rslist);
     this->printTime();
