@@ -6,7 +6,7 @@
 /*   By: psaeyang <psaeyang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 04:41:54 by psaeyang          #+#    #+#             */
-/*   Updated: 2024/04/03 04:20:51 by psaeyang         ###   ########.fr       */
+/*   Updated: 2024/04/06 02:50:12 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,9 @@ int main(int ac, char **av)
 {
     PmergeMe    pm;
 
-    if (ac < 2)
+    if (!allNum(ac, av) || ac < 2)
     {
-        std::cout << BRED"Error: No arguments\n";
-        return 1;
-    }
-    if (!allNum(ac, av))
-    {
-        std::cout << BRED"Error: Argument should be number\n";
+        std::cout << BRED"Error: invalid argument\n";
         return 1;
     }
     try

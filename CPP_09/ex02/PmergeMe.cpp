@@ -6,7 +6,7 @@
 /*   By: psaeyang <psaeyang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 04:41:36 by psaeyang          #+#    #+#             */
-/*   Updated: 2024/04/06 02:46:52 by psaeyang         ###   ########.fr       */
+/*   Updated: 2024/04/06 02:54:24 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -203,8 +203,8 @@ void    PmergeMe::printList(const std::list<int> &list)
 
 void    PmergeMe::printTime()
 {
-	std::cout << "Time to process a range of " << _size << " elements with std::list: " << std::fixed << this->_timelist << " us" << std::endl;
-	std::cout << "Time to process a range of " << _size << " elements with std::vector: " << std::fixed << this->_timevec << " us" << std::endl;
+	std::cout << "Time to process a range of " << _size << " elements with std::list: " << std::fixed << this->_timelist << " us\n";
+	std::cout << "Time to process a range of " << _size << " elements with std::vector: " << std::fixed << this->_timevec << " us\n";
 }
 
 void    PmergeMe::addList(int ac, char **av)
@@ -222,11 +222,11 @@ void    PmergeMe::addList(int ac, char **av)
 void    PmergeMe::run(int ac, char **av)
 {
     addList(ac - 1, av + 1);
-    std::cout << "Before sort: ";
+    std::cout << BMAG << "Before sort: " << RESET;
     printList(_list);
     this->sort("list");
     this->sort("vec");
-    std::cout << "After sort: ";
+    std::cout << BCYN << "After sort: " << RESET;
     printList(_rslist);
     this->printTime();
 }
