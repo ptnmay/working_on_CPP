@@ -6,7 +6,7 @@
 /*   By: psaeyang <psaeyang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 04:41:36 by psaeyang          #+#    #+#             */
-/*   Updated: 2024/04/06 02:54:24 by psaeyang         ###   ########.fr       */
+/*   Updated: 2024/04/09 04:55:49 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,7 +115,7 @@ int PmergeMe::count(int size)
     return (res);
 }
 
-void    PmergeMe::merge(std::string type)
+void    PmergeMe::MergeInsert(std::string type)
 {
 
     if (type == "list")
@@ -143,6 +143,7 @@ void    PmergeMe::merge(std::string type)
                 this->moveList(tempr, 2);
             }
         }
+        insert("list");
     }
     else if (type == "vec")
     {
@@ -169,6 +170,7 @@ void    PmergeMe::merge(std::string type)
                 this->moveVec(tempr, 2);
             }
         }
+        insert("vec");
     }
 }
 
@@ -177,16 +179,14 @@ void    PmergeMe::sort(std::string type)
     if (type == "list")
     {
         clock_t start = clock();
-        this->merge("list");
-        this->insert("list");
+        this->MergeInsert("list");
         clock_t finish = clock();
         this->_timelist = double(finish - start);
     }
     else if (type == "vec")
     {
         clock_t start = clock();
-        this->merge("vec");
-        this->insert("vec");
+        this->MergeInsert("vec");
         clock_t finish = clock();
         this->_timevec = double(finish - start);
     }
@@ -198,7 +198,7 @@ void    PmergeMe::printList(const std::list<int> &list)
     {
         std::cout << *it << " ";
     }
-    std::cout << std::endl;
+    std::cout << "\n";
 }
 
 void    PmergeMe::printTime()

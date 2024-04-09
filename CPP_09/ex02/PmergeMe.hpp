@@ -6,7 +6,7 @@
 /*   By: psaeyang <psaeyang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 04:41:47 by psaeyang          #+#    #+#             */
-/*   Updated: 2024/04/06 02:48:00 by psaeyang         ###   ########.fr       */
+/*   Updated: 2024/04/09 04:53:02 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ class PmergeMe
 			void	run(int ac, char **av);
 			void	addList(int ac, char **av);
 			void	sort(std::string type);
-			void	merge(std::string type);
+			void	MergeInsert(std::string type);
 			int		count(int size);
 			void	moveList(std::list<int>::iterator &it, int pos);
 			void	moveVec(std::vector<int>::iterator &it, int pos);
