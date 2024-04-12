@@ -6,7 +6,7 @@
 /*   By: psaeyang <psaeyang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 12:52:32 by psaeyang          #+#    #+#             */
-/*   Updated: 2024/03/25 22:42:17 by psaeyang         ###   ########.fr       */
+/*   Updated: 2024/04/12 20:23:22 by psaeyang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ bool	BitcoinExchange::bad_input(std::string const &line)
 			if (date[i] != '-')
 				return false;
 		}
-		else if (!is_digit(date[i]))
+		else if (!isdigit(date[i]))
 			return false;
 		i++;
 	}
